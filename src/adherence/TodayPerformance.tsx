@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import {Text, View, FlatList, Image} from 'react-native';
+import {Text, View, FlatList, Image, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import SQLite from 'react-native-sqlite-storage';
@@ -191,18 +191,18 @@ const TodayPerformance = ({route}) => {
   };
 
   return (
-    <View style={{backgroundColor: 'white', height: '100%'}}>
+    <View style={styles.container}>
       <Toast visibilityTime={1000}></Toast>
 
-      <View style={{flexDirection: 'column'}}></View>
-      <View style={{padding: 15, backgroundColor: 'lightgrey'}}>
-        <Text style={{fontWeight: 'bold'}}>Timings</Text>
+      <View style={styles.sContainer}></View>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Timings</Text>
       </View>
       {Timings.length !== 0 && Timings[0].length === 0 ? (
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View style={styles.imageContainer}>
           <Image
             source={require('../../assests/noremtoday.png')}
-            style={{height: 300, width: 300}}></Image>
+            style={styles.image}></Image>
         </View>
       ) : (
         <View>
@@ -219,3 +219,28 @@ const TodayPerformance = ({route}) => {
 };
 
 export default TodayPerformance;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    height: '100%',
+  },
+  sContainer: {
+    flexDirection: 'column',
+  },
+  textContainer: {
+    padding: 15,
+    backgroundColor: 'lightgrey',
+  },
+  text: {
+    fontWeight: 'bold',
+  },
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    height: 300,
+    width: 300,
+  },
+});

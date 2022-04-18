@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 import {} from '@react-native-google-signin/google-signin';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -79,19 +79,10 @@ const Loginscreen = props => {
   }
 
   return (
-    <View
-      style={{
-        alignItems: 'center',
-        height: '100%',
-        justifyContent: 'center',
-        width: '100%',
-        backgroundColor: 'white',
-      }}>
+    <View style={styles.container}>
       <Toast visibilityTime={3000}></Toast>
       {/* <Image style={{height:100, width:'30%'}} source={require("../../assests/Medstick.png")} /> */}
-      <Text style={{fontSize: 30, margin: 30, fontWeight: 'bold'}}>
-        {'LOGIN'}
-      </Text>
+      <Text style={styles.text}>{'LOGIN'}</Text>
 
       <Formik
         validationSchema={loginValidationSchema}
@@ -114,41 +105,28 @@ const Loginscreen = props => {
               onBlur={handleBlur('email')}
               value={values.email}
               keyboardType="email-address"
-              style={{width: '80%', backgroundColor: 'white'}}
+              style={styles.textInput}
             />
             {errors.email && touched.email && (
-              <Text style={{fontSize: 16, color: 'red'}}>{errors.email}</Text>
+              <Text style={styles.errEmail}>{errors.email}</Text>
             )}
 
             <Button
               style={{alignItems: 'center'}}
-              buttonStyle={{
-                backgroundColor: '#3743ab',
-                width: '70%',
-                alignItems: 'center',
-              }}
+              buttonStyle={styles.loginBtn}
               title="Login"
               disabled={!isValid}
               onPress={() => {
                 handleSubmit();
               }}
-              containerStyle={{
-                marginTop: 10,
-                width: 200,
-                alignItems: 'center',
-              }}></Button>
+              containerStyle={styles.loginBtnContainer}></Button>
             <Text style={{marginTop: 10}}>OR</Text>
             <TouchableOpacity
               onPress={() => props.navigation.navigate('Login')}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
+              <View style={styles.signupContainer}>
                 <Text>Signup with </Text>
                 <LottieView
-                  style={{width: 80, height: 80}}
+                  style={styles.lottieContainer}
                   source={require('../../assests/animate/google.json')}
                   autoPlay
                   loop
@@ -170,3 +148,45 @@ const Loginscreen = props => {
 };
 
 export default Loginscreen;
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    height: '100%',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: 'white',
+  },
+  text: {
+    fontSize: 30,
+    margin: 30,
+    fontWeight: 'bold',
+  },
+  textInput: {
+    width: '80%',
+    backgroundColor: 'white',
+  },
+  errEmail: {
+    fontSize: 16,
+    color: 'red',
+  },
+  loginBtn: {
+    backgroundColor: '#3743ab',
+    width: '70%',
+    alignItems: 'center',
+  },
+  loginBtnContainer: {
+    backgroundColor: '#3743ab',
+    width: '70%',
+    alignItems: 'center',
+  },
+  signupContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  lottieContainer: {
+    width: 80,
+    height: 80,
+  },
+});

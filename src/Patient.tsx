@@ -9,7 +9,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faUserFriends, faHospitalUser} from '@fortawesome/free-solid-svg-icons';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import {useFocusEffect} from '@react-navigation/native';
-import {Alert} from 'react-native';
+import {Alert, StyleSheet} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const Patientcomp = ({navigation}) => {
@@ -90,10 +90,10 @@ const Patientcomp = ({navigation}) => {
       </Tab>
 
       <TabView value={index} onChange={setIndex} animationType="spring">
-        <TabView.Item style={{backgroundColor: 'white', width: '100%'}}>
+        <TabView.Item style={styles.tabItem}>
           <Mypatient navigation={navigation}></Mypatient>
         </TabView.Item>
-        <TabView.Item style={{backgroundColor: 'white', width: '100%'}}>
+        <TabView.Item style={styles.tabItem}>
           <Patientrequest></Patientrequest>
         </TabView.Item>
       </TabView>
@@ -102,3 +102,11 @@ const Patientcomp = ({navigation}) => {
 };
 
 export default Patientcomp;
+
+const styles = StyleSheet.create({
+  tabItem: {
+    backgroundColor: 'white', 
+    width: '100%'
+  },
+
+});

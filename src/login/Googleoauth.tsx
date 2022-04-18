@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import {Alert, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {
   GoogleSignin,
@@ -17,13 +17,13 @@ import Toast from 'react-native-toast-message';
 import messaging from '@react-native-firebase/messaging';
 import Checkconnectivity from '../connectivity/Checkconnectivity';
 import LottieView from 'lottie-react-native';
-import { Text } from 'react-native-elements';
+import {Text} from 'react-native-elements';
 
 interface Props {
   navigation: any;
 }
 
-const Login: React.FC<{navigation}> = (Props) => {
+const Login: React.FC<{navigation}> = Props => {
   const {navigation} = Props;
   const [loading, loadingstate] = React.useState(false);
   const [connected, connectedstate] = React.useState(false);
@@ -94,7 +94,7 @@ const Login: React.FC<{navigation}> = (Props) => {
             });
           }
         })
-        .catch(async(err) => {
+        .catch(async err => {
           console.log(err);
           Toast.show({
             type: 'info',
@@ -132,25 +132,18 @@ const Login: React.FC<{navigation}> = (Props) => {
   // }
 
   return (
-    <View
-      style={{
-        alignItems: 'center',
-        height: '100%',
-        justifyContent: 'center',
-        width: '100%',
-        backgroundColor: 'white',
-      }}>
+    <View style={styles.container}>
       <Toast visibilityTime={3000}></Toast>
-      <Text style={{fontSize:25,fontWeight:'500'}}>Create an account</Text>
+      <Text style={styles.text}>Create an account</Text>
       <LottieView
-        style={{width: 130, height: 130}}
+        style={styles.lottieContainer}
         source={require('../../assests/animate/google.json')}
         autoPlay
         loop
       />
 
       <GoogleSigninButton
-        style={{width: 292, height: 58, margin: 20,borderRadius:40}}
+        style={styles.googleSigninBtn}
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={() =>
@@ -172,3 +165,27 @@ const Login: React.FC<{navigation}> = (Props) => {
 };
 
 export default Login;
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    height: '100%',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: 'white',
+  },
+  text: {
+    fontSize: 25,
+    fontWeight: '500',
+  },
+  lottieContainer: {
+    width: 130,
+    height: 130,
+  },
+  googleSigninBtn: {
+    width: 292,
+    height: 58,
+    margin: 20,
+    borderRadius: 40,
+  },
+});

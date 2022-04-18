@@ -2,7 +2,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {FlatList, View, Image, Text} from 'react-native';
+import {FlatList, View, Image, Text, StyleSheet} from 'react-native';
 import {Avatar, Button, ListItem, SearchBar} from 'react-native-elements';
 import {API_URL} from '@env';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -76,11 +76,7 @@ const Searchcaretaker = ({navigation}) => {
   const renderitem = ({item}) => {
     return (
       <ListItem
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
+        style={styles.listItem}
         hasTVPreferredFocus={undefined}
         tvParallaxProperties={undefined}>
         <ListItem.Content>
@@ -93,7 +89,7 @@ const Searchcaretaker = ({navigation}) => {
         <Button
           loading={load}
           title="Send request"
-          buttonStyle={{backgroundColor: '#3743ab'}}
+          buttonStyle={styles.bgColor}
           onPress={() => {
             sendreqtocaretaker(item.userId, item.userName);
           }}></Button>
@@ -102,7 +98,7 @@ const Searchcaretaker = ({navigation}) => {
   };
 
   return (
-    <View style={{padding: 10, backgroundColor: 'white', height: '100%'}}>
+    <View style={styles.container}>
       <Toast></Toast>
 
       <Formik
@@ -120,7 +116,7 @@ const Searchcaretaker = ({navigation}) => {
 
             <Button
               loading={searchload}
-              buttonStyle={{backgroundColor: '#3743ab'}}
+              buttonStyle={styles.bgColor}
               title="Search"
               onPress={() => handleSubmit()}
               containerStyle={{marginTop: 10}}></Button>
@@ -128,10 +124,10 @@ const Searchcaretaker = ({navigation}) => {
         )}
       </Formik>
       {data.length === 0 && (
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <View style={styles.imageContainer}>
           <Image
             source={require('../../assests/searchcaretaker.png')}
-            style={{width: 300, height: 300, marginTop: 70}}
+            style={styles.image}
             resizeMode="stretch"></Image>
         </View>
       )}
@@ -140,3 +136,28 @@ const Searchcaretaker = ({navigation}) => {
   );
 };
 export default Searchcaretaker;
+
+const styles = StyleSheet.create({
+listItem: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center'
+},
+bgColor: {
+  backgroundColor: '#3743ab'
+},
+container: {
+  padding: 10, 
+  backgroundColor: 'white', 
+  height: '100%'
+},
+imageContainer: {
+  alignItems: 'center', 
+  justifyContent: 'center'
+},
+image: {
+  width: 300, 
+  height: 300, 
+  marginTop: 70
+}
+});

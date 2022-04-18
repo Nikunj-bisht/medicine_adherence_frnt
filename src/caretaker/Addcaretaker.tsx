@@ -7,6 +7,7 @@ import {
   View,
   TouchableOpacity,
   Image,
+  StyleSheet,
 } from 'react-native';
 import React from 'react';
 import {Avatar, Button, ListItem, SpeedDial} from 'react-native-elements';
@@ -54,23 +55,10 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
     console.log(item.patientId, 'b');
 
     return (
-      <Card
-        onPress={() => {}}
-        style={{
-          borderRadius: 20,
-          margin: 6,
-          borderColor: 'lightgrey',
-          elevation: 3,
-          shadowColor: '#3743ab',
-        }}>
-        <View style={{flexDirection: 'row', padding: 0}}>
+      <Card onPress={() => {}} style={styles.card}>
+        <View style={styles.listItemContainer}>
           <ListItem
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              padding: 5,
-            }}
+            style={styles.listItem}
             hasTVPreferredFocus={undefined}
             tvParallaxProperties={undefined}>
             <Avatar
@@ -80,8 +68,7 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
                 uri: 'https://lh3.googleusercontent.com/a-/AOh14Gg1r55ukyjleOVcBDEuTUt283ClmJE4ZSeFOSmD=s96-c',
               }}></Avatar>
             <ListItem.Content>
-              <ListItem.Title
-                style={{fontSize: 16, marginLeft: 3, fontWeight: 'bold'}}>
+              <ListItem.Title style={styles.title}>
                 {item.caretakerUsername}
               </ListItem.Title>
               <ListItem.Subtitle>
@@ -90,7 +77,7 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
             </ListItem.Content>
 
             <TouchableOpacity onPress={() => {}} style={{paddingVertical: 15}}>
-              <View style={{alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
                 <FontAwesomeIcon
                   icon={faAngleRight as IconProp}
                   color={'black'}
@@ -106,12 +93,12 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
 
   return (
     <React.Fragment>
-      <View style={{flex: 1, backgroundColor: 'white', height: '100%'}}>
+      <View style={styles.container}>
         {caretakers.length === 0 && (
-          <View style={{alignItems: 'center'}}>
+          <View style={styles.imageContainer}>
             <Image
               source={require('../../assests/nocaretakers.jpg')}
-              style={{width: 400}}
+              style={styles.image}
               resizeMode="contain"></Image>
           </View>
         )}
@@ -123,12 +110,12 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
               refreshing={refresh}
               onRefresh={fetchcaretakers}></RefreshControl>
           }></FlatList>
-        <View style={{bottom: 0, alignItems: 'center'}}>
+        <View style={styles.sdContainer}>
           <SpeedDial
             isOpen={open}
-            style={{backgroundColor: 'white'}}
+            style={styles.speedDial}
             overlayColor="white"
-            buttonStyle={{backgroundColor: '#3743ab'}}
+            buttonStyle={styles.bgColor}
             icon={{name: 'add', color: 'white'}}
             openIcon={{name: 'close', color: 'white'}}
             onOpen={() => setOpen(!open)}
@@ -136,19 +123,19 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
             <SpeedDial.Action
               icon={{name: 'add', color: 'white'}}
               title="Add Caretaker"
-              style={{height: 50}}
-              buttonStyle={{backgroundColor: '#3743ab'}}
+              style={styles.sdAction}
+              buttonStyle={styles.bgColor}
               onPress={() => navigation.navigate('Search Caretaker')}
             />
             <SpeedDial.Action
               icon={{name: 'delete', color: 'white'}}
               title="Delete"
-              buttonStyle={{backgroundColor: '#3743ab'}}
-              style={{height: 50}}
+              buttonStyle={styles.bgColor}
+              style={styles.sdAction}
               onPress={() => console.log('Delete Something')}
             />
           </SpeedDial>
-          <Button buttonStyle={{backgroundColor: 'white'}} title="A"></Button>
+          <Button buttonStyle={styles.btn} title="A"></Button>
         </View>
       </View>
     </React.Fragment>
@@ -156,3 +143,58 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
 };
 
 export default Addcaretaker;
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 20,
+    margin: 6,
+    borderColor: 'lightgrey',
+    elevation: 3,
+    shadowColor: '#3743ab',
+  },
+  listItemContainer: {
+    flexDirection: 'row',
+    padding: 0,
+  },
+  listItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 5,
+  },
+  title: {
+    fontSize: 16,
+    marginLeft: 3,
+    fontWeight: 'bold',
+  },
+  iconContainer: {
+    alignItems: 'center',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    height: '100%',
+  },
+  imageContainer: {
+    alignItems: 'center',
+  },
+  image: {
+    width: 400,
+  },
+  bgColor: {
+    backgroundColor: '#3743ab',
+  },
+  sdContainer: {
+    bottom: 0,
+    alignItems: 'center',
+  },
+  speedDial: {
+    backgroundColor: 'white',
+  },
+  sdAction: {
+    height: 50,
+  },
+  btn: {
+    backgroundColor: 'white',
+  },
+});

@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   RefreshControl,
   Alert,
+  StyleSheet,
 } from 'react-native';
 import React, {useState} from 'react';
 import {Avatar, ListItem} from 'react-native-elements';
@@ -118,24 +119,17 @@ const Addmedicine = ({navigation}: Props) => {
 
   const renderitem: React.FC = ({item}: any) => {
     return (
-      <Card
-        style={{
-          borderRadius: 30,
-          margin: 3,
-          borderColor: 'lightgrey',
-          elevation: 1,
-          shadowColor: '#3743ab',
-        }}>
-        <View style={{marginBottom: 7}}>
-          <ListItem style={{backgroundColor: 'white', height: 80}}>
+      <Card style={styles.card}>
+        <View style={styles.cardContainer}>
+          <ListItem style={styles.listItem}>
             <ListItem.Content>
-              <View style={{flexDirection: 'row'}}>
+              <View style={styles.itemContent}>
                 <Avatar
                   rounded
                   size={50}
                   source={require('../assests/meddis.png')}></Avatar>
-                <View style={{flexDirection: 'column', margin: 3}}>
-                  <ListItem.Title style={{fontWeight: '600'}}>
+                <View style={styles.medicineInfo}>
+                  <ListItem.Title style={styles.itemTitle}>
                     {item.medicine_name}
                   </ListItem.Title>
                   <ListItem.Subtitle>{item.medicine_des}</ListItem.Subtitle>
@@ -177,9 +171,9 @@ const Addmedicine = ({navigation}: Props) => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: 'white', height: '100%'}}>
+    <View style={styles.container}>
       {characters.length === 0 ? (
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <View style={styles.imageContainer}>
           <Image
             source={require('../assests/nomeds.png')}
             style={{width: 300}}
@@ -197,19 +191,9 @@ const Addmedicine = ({navigation}: Props) => {
           }></FlatList>
       )}
 
-      <View
-        style={{
-          width: '100%',
-          position: 'absolute',
-          alignItems: 'center',
-          bottom: 10,
-        }}>
+      <View style={styles.addMedicineContainer}>
         <TouchableOpacity
-          style={{
-            width: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
+          style={styles.addMedicineTouch}
           onPress={() =>
             navigation.getParent().navigate('Add Medicine', {
               id: '1234',
@@ -220,14 +204,7 @@ const Addmedicine = ({navigation}: Props) => {
             autoPlay
             loop
             speed={2}
-            style={{
-              bottom: 3,
-              width: 80,
-              height: 80,
-              alignItems: 'center',
-              justifyContent: 'center',
-              elevation: 8,
-            }}></LottieView>
+            style={styles.lottieContainer}></LottieView>
         </TouchableOpacity>
       </View>
     </View>
@@ -235,3 +212,58 @@ const Addmedicine = ({navigation}: Props) => {
 };
 
 export default Addmedicine;
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 30,
+    margin: 3,
+    borderColor: 'lightgrey',
+    elevation: 1,
+    shadowColor: '#3743ab',
+  },
+  cardContainer: {
+    marginBottom: 7,
+  },
+  listItem: {
+    backgroundColor: 'white',
+    height: 80,
+  },
+  itemContent: {
+    flexDirection: 'row',
+  },
+  medicineInfo: {
+    flexDirection: 'column',
+    margin: 3,
+  },
+  itemTitle: {
+    fontWeight: '600',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    height: '100%',
+  },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  addMedicineContainer: {
+    width: '100%',
+    position: 'absolute',
+    alignItems: 'center',
+    bottom: 10,
+  },
+  addMedicineTouch: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  lottieContainer: {
+    bottom: 3,
+    width: 80,
+    height: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 8,
+  },
+});

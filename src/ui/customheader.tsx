@@ -11,7 +11,7 @@ import {
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Button, Divider} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
-import {Alert, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 import {Signout} from '../caretaker/AllIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -51,8 +51,7 @@ const CustomHeader = props => {
   });
   return (
     <>
-      <DrawerContentScrollView
-        style={{height: '100%', backgroundColor: '#e3f2fd'}}>
+      <DrawerContentScrollView style={styles.drawerContent}>
         <TouchableOpacity
           style={{marginBottom: 8}}
           onPress={() => props.navigation.getParent().navigate('Profile')}>
@@ -68,11 +67,7 @@ const CustomHeader = props => {
               title="Sign up"
               loading={false}
               loadingProps={{size: 'small', color: 'white'}}
-              buttonStyle={{
-                backgroundColor: '#0d47a1',
-                borderRadius: 5,
-                justifyContent: 'space-around',
-              }}
+              buttonStyle={styles.signUpBtn}
               titleStyle={{fontWeight: 'bold', fontSize: 23}}
               containerStyle={{
                 marginHorizontal: 50,
@@ -87,18 +82,9 @@ const CustomHeader = props => {
               title="Logout"
               iconPosition="right"
               icon={Signout()}
-              buttonStyle={{
-                borderRadius: 5,
-                justifyContent: 'space-around',
-                backgroundColor: '#3743ab',
-              }}
-              titleStyle={{fontWeight: '500', fontSize: 16}}
-              containerStyle={{
-                marginHorizontal: 50,
-                height: 50,
-                width: 200,
-                marginVertical: 10,
-              }}
+              buttonStyle={styles.logoutBtn}
+              titleStyle={styles.logoutTitle}
+              containerStyle={styles.logoutContainer}
               onPress={async () => {
                 Alert.alert('Do you want to Logout?', '', [
                   {
@@ -132,3 +118,40 @@ const CustomHeader = props => {
 };
 
 export default CustomHeader;
+
+const styles = StyleSheet.create({
+  drawerContent: {
+    height: '100%',
+    backgroundColor: '#e3f2fd',
+  },
+  signUpBtn: {
+    backgroundColor: '#0d47a1',
+    borderRadius: 5,
+    justifyContent: 'space-around',
+  },
+  signUpTitle: {
+    fontWeight: 'bold',
+    fontSize: 23,
+  },
+  signUpContainer: {
+    marginHorizontal: 50,
+    height: 50,
+    width: 200,
+    marginVertical: 10,
+  },
+  logoutBtn: {
+    borderRadius: 5,
+    justifyContent: 'space-around',
+    backgroundColor: '#3743ab',
+  },
+  logoutTitle: {
+    fontWeight: '500',
+    fontSize: 16,
+  },
+  logoutContainer: {
+    marginHorizontal: 50,
+    height: 50,
+    width: 200,
+    marginVertical: 10,
+  },
+});

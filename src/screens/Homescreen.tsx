@@ -5,7 +5,7 @@
 import React, { useEffect, useRef } from 'react';
 import LottieView from 'lottie-react-native';
 
-import {Animated, StatusBar, View} from 'react-native';
+import {Animated, StatusBar, StyleSheet, View} from 'react-native';
 import {faCamera} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => {
     }).start();
   },[]);
   return (
-    <View style={{backgroundColor: 'white', height: '100%'}}>
+    <View style={styles.container}>
       <StatusBar backgroundColor="#3743ab" />
 
       <Tab.Navigator
@@ -115,3 +115,10 @@ const HomeScreen = ({navigation}) => {
 };
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+container:{
+  backgroundColor: 'white', 
+  height: '100%'
+}
+});

@@ -9,6 +9,7 @@ import {
   View,
   TouchableOpacity,
   Image,
+  StyleSheet,
 } from 'react-native';
 import {Avatar, ListItem} from 'react-native-elements';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -57,21 +58,10 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
             user_id: item.patientId,
           });
         }}
-        style={{
-          borderRadius: 30,
-          margin: 6,
-          borderColor: 'lightgrey',
-          elevation: 5,
-          shadowColor: '#3743ab',
-        }}>
-        <View style={{flexDirection: 'row', padding: 0}}>
+        style={styles.card}>
+        <View style={styles.listItemContainer}>
           <ListItem
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              padding: 5,
-            }}
+            style={styles.listItem}
             hasTVPreferredFocus={undefined}
             tvParallaxProperties={undefined}>
             <Avatar
@@ -81,8 +71,7 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
                 uri: 'https://lh3.googleusercontent.com/a-/AOh14GgrRBm3gFrvPSRlLYSiaY5KO-HpPKl1IhK3Z3rePg=s96-c',
               }}></Avatar>
             <ListItem.Content>
-              <ListItem.Title
-                style={{fontSize: 16, marginLeft: 3, fontWeight: 'bold'}}>
+              <ListItem.Title style={styles.listItemTitle}>
                 {item.patientName}
               </ListItem.Title>
               <ListItem.Subtitle>
@@ -90,8 +79,8 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
               </ListItem.Subtitle>
             </ListItem.Content>
 
-            <TouchableOpacity onPress={() => {}} style={{paddingVertical: 15}}>
-              <View style={{alignItems: 'center'}}>
+            <TouchableOpacity onPress={() => {}} style={styles.iconTouch}>
+              <View style={styles.iconContainer}>
                 <FontAwesomeIcon
                   icon={faAngleRight as IconProp}
                   color={'black'}
@@ -106,17 +95,16 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
   };
 
   return (
-    <View style={{backgroundColor: 'white', height: '100%'}}>
-     
+    <View style={styles.container}>
       {data.length === 0 && (
-        <View style={{}}>
+        <View>
           <Image
             source={require('../../assests/nopatients.png')}
-            style={{width: 400}}
+            style={styles.image}
             resizeMode="contain"></Image>
-        </View> 
+        </View>
       )}
-       <FlatList
+      <FlatList
         data={data}
         renderItem={renderitem}
         refreshControl={
@@ -129,3 +117,41 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
 };
 
 export default Mypatient;
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 30,
+    margin: 6,
+    borderColor: 'lightgrey',
+    elevation: 5,
+    shadowColor: '#3743ab',
+  },
+  listItemContainer: {
+    flexDirection: 'row',
+    padding: 0,
+  },
+  listItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 5,
+  },
+  listItemTitle: {
+    fontSize: 16,
+    marginLeft: 3,
+    fontWeight: 'bold',
+  },
+  iconTouch: {
+    paddingVertical: 15,
+  },
+  iconContainer: {
+    alignItems: 'center',
+  },
+  container: {
+    backgroundColor: 'white',
+    height: '100%',
+  },
+  image: {
+    width: 400,
+  },
+});

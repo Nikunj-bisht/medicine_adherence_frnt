@@ -6,7 +6,7 @@ import React from 'react';
 import CaretakerReq from './Caretakerreq';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {useFocusEffect} from '@react-navigation/native';
-import {Alert} from 'react-native';
+import {Alert, StyleSheet} from 'react-native';
 import {Tab, TabView} from 'react-native-elements';
 import {Caretaker_nurse, Userfriend} from './AllIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -53,34 +53,48 @@ export default function Caretakercomp({navigation}) {
       <Tab
         value={index}
         onChange={e => setIndex(e)}
-        indicatorStyle={{
-          backgroundColor: 'white',
-          height: 3,
-        }}
-        style={{backgroundColor: '#3743ab'}}
+        indicatorStyle={styles.indicator}
+        style={styles.bgColor}
         variant="primary">
         <Tab.Item
           title="Caretakers"
-          containerStyle={{backgroundColor: '#3743ab'}}
-          titleStyle={{fontSize: 12}}
+          containerStyle={styles.bgColor}
+          titleStyle={styles.title}
           icon={Caretaker_nurse()}
         />
         <Tab.Item
           title="Caretaker request"
-          titleStyle={{fontSize: 12}}
-          containerStyle={{backgroundColor: '#3743ab'}}
+          titleStyle={styles.title}
+          containerStyle={styles.bgColor}
           icon={Userfriend()}
         />
       </Tab>
 
       <TabView value={index} onChange={setIndex} animationType="spring">
-        <TabView.Item style={{backgroundColor: 'white', width: '100%'}}>
+        <TabView.Item style={styles.tabViewItem}>
           <Addcaretaker navigation={navigation}></Addcaretaker>
         </TabView.Item>
-        <TabView.Item style={{backgroundColor: 'white', width: '100%'}}>
+        <TabView.Item style={styles.tabViewItem}>
           <CaretakerReq></CaretakerReq>
         </TabView.Item>
       </TabView>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  indicator: {
+    backgroundColor: 'white',
+    height: 3,
+  },
+  bgColor: {
+    backgroundColor: '#3743ab',
+  },
+  title: {
+    fontSize: 12,
+  },
+  tabViewItem: {
+    backgroundColor: 'white',
+    width: '100%',
+  },
+});

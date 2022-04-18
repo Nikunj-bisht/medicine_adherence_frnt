@@ -2,7 +2,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, FlatList, Image, RefreshControl} from 'react-native';
+import {View, FlatList, Image, RefreshControl, StyleSheet} from 'react-native';
 import {Card} from 'react-native-paper';
 import {Avatar} from 'react-native-elements';
 import {API_URL} from '@env';
@@ -60,12 +60,12 @@ const Patientrequest = () => {
       .catch(err => console.log(err));
   };
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={styles.container}>
       {patients.length === 0 && (
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <View style={styles.imageContainer}>
           <Image
             source={require('../../assests/nopatientreq.png')}
-            style={{width: 400}}
+            style={styles.image}
             resizeMode="contain"></Image>
         </View>
       )}
@@ -77,9 +77,9 @@ const Patientrequest = () => {
         }
         data={patients}
         renderItem={({item}) => (
-          <Card style={{elevation: 2, margin: 6, borderRadius: 25}}>
+          <Card style={styles.card}>
             <View style={{flexDirection: 'row'}}>
-              <View style={{marginTop: 10, marginLeft: 6}}>
+              <View style={styles.avatarContainer}>
                 <Avatar
                   size={100}
                   rounded
@@ -89,58 +89,33 @@ const Patientrequest = () => {
               </View>
               <View style={{flexDirection: 'column'}}>
                 <ListItem
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}
+                  style={styles.ListItem}
                   hasTVPreferredFocus={undefined}
                   tvParallaxProperties={undefined}>
                   <ListItem.Content>
-                    <ListItem.Title
-                      style={{
-                        fontSize: 18,
-                        marginLeft: 15,
-                        fontWeight: '900',
-                        textTransform: 'uppercase',
-                      }}>
+                    <ListItem.Title style={styles.title}>
                       {item.patientName}
                     </ListItem.Title>
-                    <ListItem.Subtitle
-                      style={{
-                        fontSize: 15,
-                        fontWeight: '500',
-                        color: 'black',
-                        marginLeft: 13,
-                      }}>
+                    <ListItem.Subtitle style={styles.subtitle}>
                       {' Sent on : ' + item.createdAt}
                     </ListItem.Subtitle>
                   </ListItem.Content>
                 </ListItem>
-                <View style={{flexDirection: 'row', marginLeft: 25}}>
+                <View style={styles.btnContainer}>
                   <Button
                     onPress={() => {
                       acceptrequest(item.cid);
                     }}
                     title="Confirm"
-                    buttonStyle={{
-                      width: 100,
-                      borderRadius: 25,
-                      marginBottom: 10,
-                      backgroundColor: '#4267B2',
-                    }}
+                    buttonStyle={styles.confirmBtn}
                     color="#4267B2"></Button>
-                  <View style={{margin: 5}} />
+                  <View style={styles.deleteBtnContainer} />
                   <Button
                     onPress={() => {
                       deletereq(item.cid);
                     }}
                     title="Delete"
-                    buttonStyle={{
-                      width: 100,
-                      borderRadius: 25,
-                      backgroundColor: '#d32f2f',
-                    }}
+                    buttonStyle={styles.deleteBtn}
                     color="#e53935"></Button>
                 </View>
               </View>
@@ -152,3 +127,61 @@ const Patientrequest = () => {
 };
 
 export default Patientrequest;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: 400,
+  },
+  card: {
+    elevation: 2,
+    margin: 6,
+    borderRadius: 25,
+  },
+  avatarContainer: {
+    marginTop: 10,
+    marginLeft: 6,
+  },
+  ListItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 18,
+    marginLeft: 15,
+    fontWeight: '900',
+    textTransform: 'uppercase',
+  },
+  subtitle: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: 'black',
+    marginLeft: 13,
+  },
+  btnContainer: {
+    flexDirection: 'row',
+    marginLeft: 25,
+  },
+  confirmBtn: {
+    width: 100,
+    borderRadius: 25,
+    marginBottom: 10,
+    backgroundColor: '#4267B2',
+  },
+  deleteBtnContainer: {
+    margin: 5,
+  },
+  deleteBtn: {
+    width: 100,
+    borderRadius: 25,
+    backgroundColor: '#d32f2f',
+  },
+});

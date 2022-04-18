@@ -4,7 +4,7 @@
 /* eslint-disable handle-callback-err */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import {Image, Modal, ScrollView, View} from 'react-native';
+import {Image, Modal, ScrollView, StyleSheet, View} from 'react-native';
 import {API_URL} from '@env';
 import React, {useState} from 'react';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
@@ -13,46 +13,38 @@ import {useFocusEffect} from '@react-navigation/native';
 import {Button, Text} from 'react-native-elements';
 import * as Progress from 'react-native-progress';
 import Toast from 'react-native-toast-message';
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(["Require cycle:"])
+import {LogBox} from 'react-native';
+LogBox.ignoreLogs(['Require cycle:']);
 interface Props {
   route: any;
   navigation: any;
 }
 
 const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
-
   const {image_uri} = route.params;
   const [mycaretakers, mycaretakerstate] = useState([]);
   const [send_to, send_to_state] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
 
-
   const Renderitem = ({item}) => {
     const [med1, setMed1] = useState(false);
 
     return (
-      <View style={{flexDirection: 'row'}}>
+      <View style={styles.container1}>
         <BouncyCheckbox
           size={22}
           fillColor="#3743ab"
           unfillColor="#FFFFFF"
           isChecked={med1}
-          iconStyle={{borderColor: '#3743ab', borderWidth: 1.3}}
-          textStyle={{
-            fontFamily: 'JosefinSans-Regular',
-            fontSize: 17,
-            color: 'black',
-          }}
+          iconStyle={styles.bouncyIcon}
+          textStyle={styles.bouncyText}
           disableBuiltInState
           onPress={() => {
             setMed1(!med1);
             !med1 ? send_to_state(item.caretakerId) : send_to_state('');
           }}
         />
-        <Text style={{fontWeight: '600', fontSize: 18}}>
-          {item.caretakerUsername}
-        </Text>
+        <Text style={styles.text}>{item.caretakerUsername}</Text>
       </View>
     );
   };
@@ -132,26 +124,15 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
   }
 
   return (
-    <View style={{height: '100%', padding: 20, backgroundColor: 'white'}}>
+    <View style={styles.container2}>
       <Toast visibilityTime={1500}></Toast>
       <Modal
         animationType="fade"
         transparent={true}
         visible={modalVisible}
-        style={{alignItems: 'center'}}>
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginTop: 200,
-          }}>
-          <View
-            style={{
-              alignItems: 'center',
-              backgroundColor: 'white',
-              width: '70%',
-              height: '50%',
-            }}>
+        style={styles.modal}>
+        <View style={styles.inContainer}>
+          <View style={styles.inContainer2}>
             <Text style={{}}>Please wait Uploading Image!</Text>
             <Progress.CircleSnail
               spinDuration={500}
@@ -161,24 +142,16 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
           </View>
         </View>
       </Modal>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          margin: 10,
-        }}>
-        <Text style={{fontWeight: '900'}}>Image</Text>
+      <View style={styles.imageContainer}>
+        <Text style={styles.imageText}>Image</Text>
         <Button
           title="Retake"
           onPress={() => {
             navigation.pop(1);
           }}></Button>
       </View>
-      <Image
-        source={{uri: image_uri}}
-        style={{height: '70%', width: '100%'}}></Image>
-      <View style={{padding: 50}}>
+      <Image source={{uri: image_uri}} style={styles.image}></Image>
+      <View style={styles.scrollViewContainer}>
         <ScrollView>
           {mycaretakers.map(item => {
             return <Renderitem item={item}></Renderitem>;
@@ -188,8 +161,8 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
             disabled={send_to === ''}
             onPress={SendImage}
             title="Send"
-            buttonStyle={{backgroundColor: '#3743ab'}}
-            containerStyle={{marginTop: 25}}></Button>
+            buttonStyle={styles.btn}
+            containerStyle={styles.btnContainer}></Button>
         </ScrollView>
       </View>
     </View>
@@ -197,3 +170,63 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
 };
 
 export default SendImageToCaretaker;
+
+const styles = StyleSheet.create({
+  container1: {
+    flexDirection: 'row',
+  },
+  bouncyIcon: {
+    borderColor: '#3743ab',
+    borderWidth: 1.3,
+  },
+  bouncyText: {
+    fontFamily: 'JosefinSans-Regular',
+    fontSize: 17,
+    color: 'black',
+  },
+  text: {
+    fontWeight: '600',
+    fontSize: 18,
+  },
+  container2: {
+    height: '100%',
+    padding: 20,
+    backgroundColor: 'white',
+  },
+  modal: {
+    alignItems: 'center',
+  },
+  inContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 200,
+  },
+  inContainer2: {
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: '70%',
+    height: '50%',
+  },
+  imageContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: 10,
+  },
+  imageText: {
+    fontWeight: '900',
+  },
+  image: {
+    height: '70%',
+    width: '100%',
+  },
+  scrollViewContainer: {
+    padding: 50,
+  },
+  btn: {
+    backgroundColor: '#3743ab',
+  },
+  btnContainer: {
+    marginTop: 25,
+  },
+});

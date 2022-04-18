@@ -3,19 +3,19 @@
 import {RNCamera} from 'react-native-camera';
 import {useCamera} from 'react-native-camera-hooks';
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import LottieView from 'lottie-react-native';
 
 const CameraScreen = ({navigation}) => {
   const [{cameraRef}, {takePicture}] = useCamera(null);
 
   return (
-    <View style={{height: '100%'}}>
-      <View style={{flex: 1}}>
+    <View style={styles.container}>
+      <View style={styles.sContainer}>
         <RNCamera
           ref={cameraRef}
           type={RNCamera.Constants.Type.back}
-          style={{height: '100%'}}></RNCamera>
+          style={styles.camera}></RNCamera>
 
         <TouchableOpacity
           onPress={async () => {
@@ -25,16 +25,9 @@ const CameraScreen = ({navigation}) => {
               image_uri: data.uri,
             });
           }}
-          style={{
-            borderColor: 'white',
-            position: 'absolute',
-            bottom: 10,
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-          }}>
+          style={styles.touch}>
           <LottieView
-            style={{width: 240, height: 240}}
+            style={styles.lottieContainer}
             source={require('../../assests/animate/camera1.json')}
             autoPlay
             loop></LottieView>
@@ -45,3 +38,27 @@ const CameraScreen = ({navigation}) => {
 };
 
 export default CameraScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+  },
+  sContainer: {
+    flex: 1,
+  },
+  camera: {
+    height: '100%',
+  },
+  touch: {
+    borderColor: 'white',
+    position: 'absolute',
+    bottom: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+  },
+  lottieContainer: {
+    width: 240,
+    height: 240,
+  },
+});

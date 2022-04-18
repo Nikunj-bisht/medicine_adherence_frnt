@@ -1,4 +1,4 @@
-import { Linking, Share, View} from 'react-native';
+import { Linking, Share, StyleSheet, View} from 'react-native';
 import React from 'react';
 import SettingsList from 'react-native-settings-list';
 
@@ -8,33 +8,33 @@ interface Props {
 
 const Settings: React.FC<Props> = ({navigation}: Props) => {
   return (
-    <View style={{height: '100%', backgroundColor: 'white'}}>
+    <View style={styles.container}>
       <SettingsList borderColor="white" backgroundColor="white">
         <SettingsList.Header
           headerText="Settings"
-          headerStyle={{color: 'gray', fontSize: 16}}
+          headerStyle={styles.header}
         />
         <SettingsList.Item
           hasNavArrow={true}
           title="Notification settings"
-          titleStyle={{color: 'black', fontSize: 18}}
+          titleStyle={styles.title}
           onPress={() => Linking.openSettings()}
         />
 
         <SettingsList.Header
           headerText="General"
-          headerStyle={{color: 'gray', fontSize: 16}}
+          headerStyle={styles.header}
         />
         <SettingsList.Item
           hasNavArrow={false}
           title="About Medstick"
-          titleStyle={{color: 'black', fontSize: 18}}
+          titleStyle={styles.title}
           onPress={() => navigation.navigate('About')}
         />
         <SettingsList.Item
           hasNavArrow={false}
           title="Share with friends and family"
-          titleStyle={{color: 'black', fontSize: 18}}
+          titleStyle={styles.title}
           onPress={async () => {
             try {
               await Share.share({
@@ -53,4 +53,19 @@ const Settings: React.FC<Props> = ({navigation}: Props) => {
 };
 
 export default Settings;
+
+const styles = StyleSheet.create({
+ container: {
+  height: '100%', 
+  backgroundColor: 'white',
+ },
+ header: {
+  color: 'gray', 
+  fontSize: 16,
+ },
+ title: {
+  color: 'black', 
+  fontSize: 18,
+ },
+});
 

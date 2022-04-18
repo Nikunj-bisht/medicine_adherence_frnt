@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import {Dimensions, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Button, Text} from 'react-native-elements';
 import * as yup from 'yup';
@@ -26,8 +26,6 @@ const db = SQLite.openDatabase(
 const UserMed = ({route, navigation}) => {
   const {id} = route.params;
   console.log(id);
-  const height = Dimensions.get('window').height;
-  const width = Dimensions.get('window').width;
   const savemedicinetodb = async ({Name, Description}) => {
     await db.transaction(txn => {
       txn.executeSql(
@@ -61,9 +59,9 @@ const UserMed = ({route, navigation}) => {
     Description: yup.string().required().min(10),
   });
   return (
-    <View style={{backgroundColor: 'white', height: height, width: width}}>
+    <View style={styles.container}>
       <Toast></Toast>
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+      <View style={styles.lottieContainer}>
         <LottieView
           style={{width: 300, height: 300}}
           source={require('../assests/animate/med_des.json')}
@@ -72,15 +70,7 @@ const UserMed = ({route, navigation}) => {
           speed={1}></LottieView>
       </View>
       <View
-        style={{
-          margin: 12,
-          marginTop: 20,
-          height: height / 4,
-          backgroundColor: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-        }}>
+        style={styles.inputContainer}>
         <Formik
           initialValues={{Name: '', Description: ''}}
           validationSchema={schema}
@@ -129,13 +119,40 @@ const UserMed = ({route, navigation}) => {
         </Formik>
       </View>
       <View
-        style={{
-          marginTop: 30,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}></View>
+        style={styles.bottomContainer}></View>
     </View>
   );
 };
 
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
+
 export default UserMed;
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    height: height, 
+    width: width
+  },
+  lottieContainer: {
+    alignItems: 'center', 
+    justifyContent: 'center'
+  },
+  inputContainer: {
+    margin: 12,
+    marginTop: 20,
+    height: height / 4,
+    backgroundColor: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  bottomContainer: {
+    marginTop: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+});
