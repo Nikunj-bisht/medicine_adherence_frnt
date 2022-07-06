@@ -17,17 +17,28 @@ import {Card} from 'react-native-paper';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import {useFocusEffect} from '@react-navigation/native';
 import UserAvatar from 'react-native-user-avatar';
+import {useDispatch,useSelector} from 'react-redux';
+import { fetchPatients } from '../../redux/actions/myPatientsActions';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import styles from "../patientStyles/myPatientStyles";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 interface Props {
   navigation: any;
 }
 
-const Mypatient: React.FC<Props> = ({navigation}: Props) => {
+ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
   const [data, datastate] = React.useState([]);
-  const [refresh, refeereshstate] = React.useState(false);
+ const [refresh, refeereshstate] = React.useState(false);
+ //const [open,setOpen] = React.useState(false);
+//   const dispatch = useDispatch();
+//   const fetchPatients = async () => {
+//     let caretaker_id = await AsyncStorage.getItem('caretaker_id');
+//     dispatch(fetchPatients(user_id));
+//     refeereshstate(false);
+//     datastate([]);
+//   };
   const fetchpatients = () => {
     fetch(
       `${API_URL}/api/v1/patients?caretakerId=d0aba7ce-1e7f-458e-8090-8cc62c00c3c5`,
@@ -43,6 +54,7 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
       })
       .catch(err => console.log(err));
   };
+
   useFocusEffect(
     React.useCallback(() => {
       async function checkforlog() {
@@ -105,7 +117,7 @@ const Mypatient: React.FC<Props> = ({navigation}: Props) => {
               </ListItem.Subtitle>
             </ListItem.Content>
 
-            <TouchableOpacity onPress={() => {}} style={styles.touch}>
+            <TouchableOpacity style={styles.touch}>
               <View style={styles.icon}>
                 <FontAwesomeIcon
                   icon={faAngleRight as IconProp}

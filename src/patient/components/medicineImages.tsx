@@ -12,7 +12,6 @@ import Carousel, {Pagination} from 'react-native-snap-carousel';
 import { API_URL } from '../../repositories/var';
 import styles from '../patientStyles/medicineImagesStyles';
 
-
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.84);
 

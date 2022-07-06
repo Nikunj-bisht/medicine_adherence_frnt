@@ -1,12 +1,12 @@
 import {Text, View, FlatList, Image} from 'react-native';
 import React, {useState} from 'react';
 import SQLite from 'react-native-sqlite-storage';
-var weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+let weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 import Toast from 'react-native-toast-message';
 import styles from '../adherenceStyles/todayPerformanceStyles';
 import {Box} from '../organisms/medicineTime';
 
-var cc = 0;
+let cc = 0;
 
 const TodayPerformance = ({route}) => {
   const db = SQLite.openDatabase({
@@ -67,12 +67,12 @@ const TodayPerformance = ({route}) => {
       txn.executeSql(
         'SELECT * FROM `User_medicines` where user_id = ?',
         [user_id],
-        function (tx: any, res: any) {
+        function (res: any) {
           cc = res.rows.item(0).current_count;
           let arr = res.rows.item(0).days.split(':');
           let set = new Set(arr);
-          var today = new Date(res.rows.item(0).end_date);
-          var tody_date = new Date();
+          let today = new Date(res.rows.item(0).end_date);
+          let tody_date = new Date();
           let td_da =
             tody_date.getDate() +
             '-' +
@@ -87,7 +87,7 @@ const TodayPerformance = ({route}) => {
             txn.executeSql(
               'SELECT * FROM reminder_day where date = ? AND med_id = ?',
               [td_da, user_id],
-              function (txx, resp) {
+              function (resp) {
                 if (resp.rows.length === 0) {
                   let remId = Math.floor(10000000 + Math.random() * 90000000);
 
@@ -101,7 +101,7 @@ const TodayPerformance = ({route}) => {
                   txn.executeSql(
                     'SELECT * FROM reminder_day where date = ? AND med_id = ?',
                     [td_da, user_id],
-                    function (txpp, respp) {
+                    function (respp) {
                       setTime(respp.rows.item(0).timings.split('-'));
                     },
                   );
@@ -109,7 +109,7 @@ const TodayPerformance = ({route}) => {
                   txn.executeSql(
                     'SELECT * FROM reminder_day where date = ? AND med_id = ?',
                     [td_da, user_id],
-                    function (txo, respp) {
+                    function (respp) {
                       setTime(respp.rows.item(0).timings.split('-'));
                     },
                   );
@@ -133,7 +133,7 @@ const TodayPerformance = ({route}) => {
       {Timings.length !== 0 && Timings[0].length === 0 ? (
         <View style={styles.container2}>
           <Image
-            source={require('../../../assests/noremtoday.png')}
+            source={require('../../../../assests/noremtoday.png')}
             style={styles.container2Image}
           />
         </View>

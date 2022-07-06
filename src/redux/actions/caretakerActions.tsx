@@ -1,6 +1,6 @@
 import Types from './allTypes';
 
-export function fetchCaretakers(user_id: String) {
+export function fetchCaretakers(user_id: string) {
   return {
     type: Types.GET_CARETAKERS,
     payload: user_id,

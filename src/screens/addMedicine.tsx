@@ -38,7 +38,7 @@ const Addmedicine = ({navigation}: Props) => {
 
   const checkformeds = async () => {
     return new Promise(function (resolve) {
-      var meds_array: any[] = [];
+      let meds_array: any[] = [];
 
       db.transaction(async function (txn) {
         txn.executeSql(
@@ -49,7 +49,7 @@ const Addmedicine = ({navigation}: Props) => {
         txn.executeSql(
           'SELECT * FROM `User_medicines`',
           [],
-          function (tx: any, res: any) {
+          function (res: any) {
             for (let i = 0; i < res.rows.length; ++i) {
               meds_array.push(res.rows.item(i));
             }
@@ -77,7 +77,7 @@ const Addmedicine = ({navigation}: Props) => {
       txn.executeSql(
         'SELECT * FROM `User_medicines`',
         [],
-        function (tx: any, res: any) {
+        function ( res: any) {
           for (let i = 0; i < res.rows.length; ++i) {
             med_del.push(res.rows.item(i));
           }

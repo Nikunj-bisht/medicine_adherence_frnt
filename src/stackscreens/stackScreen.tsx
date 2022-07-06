@@ -4,13 +4,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import React from 'react';
 
-import MyComponent from '../adherence/components/adherenceHistory';
-import CameraScreen from '../adherence/components/clickSendImage';
-import SendImageToCaretaker from '../adherence/components/sendImageToCaretaker';
-import TodayPerformance from '../adherence/components/todayPerformance';
+import MyComponent from '../screens/adherence/components/adherenceHistory';
+import CameraScreen from '../screens/adherence/components/clickSendImage';
+import SendImageToCaretaker from '../screens/adherence/components/sendImageToCaretaker';
+import TodayPerformance from '../screens/adherence/components/todayPerformance';
 import Addevent from '../alarm/components/addEvents';
 import Reminder from '../alarm/components/reminder';
-import Searchcaretaker from '../caretaker/components/searchCaretaker';
+import Searchcaretaker from '../screens/caretaker/components/searchCaretaker';
 import Login from '../login/components/googleOauth';
 import Loginscreen from '../login/components/loginScreen';
 import Profile from '../profile/profile';

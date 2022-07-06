@@ -13,11 +13,8 @@ import {List} from 'react-native-paper';
 import { API_URL } from '../../repositories/var';
 import * as Progress from 'react-native-progress';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
-import {LogBox} from 'react-native';
 import {Button} from 'react-native-elements';
 import styles from '../patientStyles/patientProfileStyles';
-
-LogBox.ignoreLogs(['Require cycle:']);
 
 const ViewProfile = ({route, navigation}) => {
   const {user_id} = route.params;

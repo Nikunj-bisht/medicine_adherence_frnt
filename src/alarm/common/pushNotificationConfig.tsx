@@ -1,9 +1,9 @@
 import PushNotification from 'react-native-push-notification';
-var Sound = require('react-native-sound');
+let Sound = require('react-native-sound');
 
 function PlaySound() {
   Sound.setCategory('Alarm');
-  var whoosh = new Sound('sound.mp3', Sound.MAIN_BUNDLE, (error: any) => {
+  let whoosh = new Sound('sound.mp3', Sound.MAIN_BUNDLE, (error: any) => {
     if (error) {
       return;
     }
@@ -33,7 +33,7 @@ function Pushnotificationforeground(mssg: any) {
 }
 
 const generatenotificationforpatient = (mssg: any, body: any) => {
-  var num = Math.floor(Math.random() * 90000) + 10000;
+  let num = Math.floor(Math.random() * 90000) + 10000;
   PushNotification.localNotificationSchedule({
     title: mssg.notification.title,
     message: body,
@@ -61,7 +61,7 @@ const generatenotificationforcaretaker = (
   body: any,
   big_picure_url: String,
 ) => {
-  var num = Math.floor(Math.random() * 90000) + 10000;
+  let num = Math.floor(Math.random() * 90000) + 10000;
 
   PushNotification.createChannel(
     {

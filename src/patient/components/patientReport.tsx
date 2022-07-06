@@ -16,15 +16,15 @@ import {Card} from 'react-native-paper';
 import {useFocusEffect} from '@react-navigation/native';
 import NetworkCalls from '../../connectivity/network';
 import * as Animatable from 'react-native-animatable';
-import Downloadpdf from '../../adherence/common/downloadPdf';
+import Downloadpdf from '../../screens/adherence/common/downloadPdf';
 import LottieView from 'lottie-react-native';
 import HistoryDetail from '../../screens/components/historyDetail';
-import AdherencePercentage from '../../adherence/common/adherencePercentage';
+import AdherencePercentage from '../../screens/adherence/common/adherencePercentage';
 import styles from '../patientStyles/patientReportStyles';
 
 let detailData = {};
 
-var weeks: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+let weeks: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 const months = [
   'Jan',
   'Feb',
@@ -179,7 +179,6 @@ export default function PatientReport({route}) {
       };
     }, []),
   );
-  useFocusEffect(() => {});
 
   return (
     <View style={styles.container}>

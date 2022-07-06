@@ -3,7 +3,7 @@
 import React from 'react';
 import {FlatList, View, Image, Text} from 'react-native';
 import {Button, ListItem, SearchBar} from 'react-native-elements';
-import { API_URL } from '../../repositories/var';
+import { API_URL } from '../../../repositories/var';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 import {Formik} from 'formik';
@@ -11,7 +11,8 @@ import * as yup from 'yup';
 import UserAvatar from 'react-native-user-avatar';
 import styles from '../CaretakerStyles/searchCaretakerStyles';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import {showToast} from '../../components/atoms/toast';
+import {showToast} from '../../../components/atoms/toast';
+import { debounce } from 'lodash.debounce'
 
 const Searchcaretaker = ({navigation}) => {
   const [data, datastate] = React.useState([]);
@@ -45,8 +46,8 @@ const Searchcaretaker = ({navigation}) => {
   };
 
   const sendreqtocaretaker = async (
-    caret_id: String,
-    caret_username: String,
+    caret_id: string,
+    caret_username: string,
   ) => {
     const pnt_id = await AsyncStorage.getItem('user_id');
     const pt_name = await AsyncStorage.getItem('user_name');
@@ -100,8 +101,6 @@ const Searchcaretaker = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Toast></Toast>
-
       <Formik
         validationSchema={loginValidationSchema}
         initialValues={{email: ''}}
@@ -126,7 +125,7 @@ const Searchcaretaker = ({navigation}) => {
       {data.length === 0 && (
         <View style={styles.imgContainer}>
           <Image
-            source={require('../../../assests/searchcaretaker.png')}
+            source={require('../../../../assests/searchcaretaker.png')}
             style={styles.img}
             resizeMode="stretch"></Image>
         </View>

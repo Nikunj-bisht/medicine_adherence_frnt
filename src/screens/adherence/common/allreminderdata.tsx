@@ -1,5 +1,5 @@
 /* eslint-disable radix */
-import globalDb from '../../repositories/database/globalDb';
+import globalDb from '../../../repositories/database/globalDb';
 
 const db = globalDb();
 const Allreminderdata = async (med_name: any) => {
@@ -17,13 +17,13 @@ const Allreminderdata = async (med_name: any) => {
         txn.executeSql(
           'SELECT * FROM `User_medicines` WHERE medicine_name = ?',
           [med_name],
-          function (tx: any, res: any) {
+          function (res: any) {
             reminder_obj = res.rows.item(0);
             med_id = parseInt(res.rows.item(0).user_id);
             txn.executeSql(
               'SELECT * FROM `reminder_day` WHERE med_id = ?',
               [med_id],
-              function (txx: any, respp: any) {
+              function (respp: any) {
                 for (let o = 0; o < respp.rows.length; o++) {
                   const curr_rem_obj = respp.rows.item(o);
 

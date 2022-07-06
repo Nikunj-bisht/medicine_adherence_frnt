@@ -16,7 +16,7 @@ import {Card} from 'react-native-paper';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import UserAvatar from 'react-native-user-avatar';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchCaretakers} from '../../redux/actions/caretakerActions';
+import {fetchCaretakers} from '../../../redux/actions/caretakerActions';
 import styles from "../CaretakerStyles/caretakerComStyles";
 
 
@@ -48,7 +48,6 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
 
     return (
       <Card
-        onPress={() => {}}
         style={styles.cardContainer}>
         <View style={styles.top}>
           <ListItem
@@ -66,7 +65,7 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
               </ListItem.Subtitle>
             </ListItem.Content>
 
-            <TouchableOpacity onPress={() => {}} style={styles.iconTouch}>
+            <TouchableOpacity style={styles.iconTouch}>
               <View style={styles.icon}>
                 <FontAwesomeIcon
                   icon={faAngleRight as IconProp}
@@ -95,7 +94,7 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
         {load && (
           <View style={styles.imgView}>
             <Image
-              source={require('../../../assests/nocaretakers.jpg')}
+              source={require('../../../../assests/nocaretakers.jpg')}
               style={styles.img}
               resizeMode="contain"></Image>
           </View>

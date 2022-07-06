@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import {Dimensions, View} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import {Button, Text} from 'react-native-elements';
 import * as yup from 'yup';
@@ -14,8 +14,6 @@ import * as Animatable from 'react-native-animatable';
 import globalDb from '../repositories/database/globalDb';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from "./screenStyles/userMedStyles";
-
-
 
 async function createdb() {
   let first = await AsyncStorage.getItem('first');
@@ -47,7 +45,7 @@ const UserMed = ({route, navigation}) => {
         'CREATE TABLE IF NOT EXISTS User_medicines(user_id INTEGER PRIMARY KEY NOT NULL, medicine_name TEXT, medicine_des TEXT , title TEXT, time TEXT , days TEXT , start_date TEXT , end_date TEXT , status INTEGER , sync INTEGER , total_med_reminders INTEGER , current_count INTEGER)',
         [],
       );
-      var value = Math.floor(10000 + Math.random() * 90000);
+      let value = Math.floor(10000 + Math.random() * 90000);
 
       txn.executeSql(
         'INSERT INTO User_medicines (user_id,medicine_name,medicine_des,title,time,days,start_date,end_date,status,sync,total_med_reminders,current_count) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',

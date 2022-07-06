@@ -9,11 +9,16 @@ import { API_URL } from '../../repositories/var';
 import {ListItem, Button} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
 import styles from '../patientStyles/patientRequestStyles';
+import { useDispatch,useSelector } from 'react-redux';
+import { fetchpatientrequests } from '../../redux/actions/patientRequestActions';
 
 
 const Patientrequest = () => {
   const [patients, patientsdata] = React.useState([]);
   const [refresh, refreshstate] = React.useState(false);
+  // const dispatch = useDispatch();
+  // const fetchpatientreq = async 
+
 
   const fetchpatientreq = () => {
     fetch(
@@ -43,7 +48,7 @@ const Patientrequest = () => {
       };
     }, []),
   );
-  const acceptrequest = (ci_id: String) => {
+  const acceptrequest = (ci_id: string) => {
     let url: any = new URL(`${API_URL}/api/v1/accept`);
     url.searchParams.append('cId', ci_id);
 
@@ -54,7 +59,7 @@ const Patientrequest = () => {
       })
       .catch(err => console.log(err));
   };
-  const deletereq = (ci_id: String) => {
+  const deletereq = (ci_id: string) => {
     let url: any = new URL(`${API_URL}/api/v1/delete`);
     url.searchParams.append('cId', ci_id);
 

@@ -18,11 +18,11 @@ import ProgressCircle from 'react-native-progress-circle';
 import {Divider} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
 import * as Progress from 'react-native-progress';
-import { API_URL } from '../../repositories/var';
+import { API_URL } from '../../../repositories/var';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import * as Animatable from 'react-native-animatable';
-import globalDb from '../../repositories/database/globalDb';
+import globalDb from '../../../repositories/database/globalDb';
 import AdherencePercentage from '../common/adherencePercentage';
 let today = new Date();
 const Medicineadherence = ({navigation}) => {
@@ -52,7 +52,6 @@ const Medicineadherence = ({navigation}) => {
                   Alert.alert('Reminder duration over', '', [
                     {
                       text: 'Ok',
-                      onPress: () => {},
                     },
                   ]);
                 } else {
@@ -104,7 +103,7 @@ const Medicineadherence = ({navigation}) => {
                 </View>
               </View>
               <View style={{padding: 30}}>
-                <TouchableOpacity onPress={() => {}}>
+                <TouchableOpacity>
                   <ProgressCircle
                     percent={percentage}
                     radius={26}
@@ -141,7 +140,7 @@ const Medicineadherence = ({navigation}) => {
         await txn.executeSql(
           'SELECT * FROM `User_medicines`',
           [],
-          function (tx, res) {
+          function (res) {
             let tcurrenttaken = 0;
             let ttotaltaken = 0;
 
@@ -232,10 +231,6 @@ const Medicineadherence = ({navigation}) => {
       fetchallreminders().then(() => {
         fetchallremindersandsync();
       });
-
-      return () => {
-       active = false;
-      };
     }, []),
   );
 
@@ -332,7 +327,7 @@ const Medicineadherence = ({navigation}) => {
       {reminderdata.length === 0 && (
         <View style={{alignItems: 'center'}}>
           <Image
-            source={require('../../../assests/noreminders.png')}
+            source={require('../../../../assests/noreminders.png')}
             style={{width: 300}}
             resizeMode="contain"></Image>
         </View>

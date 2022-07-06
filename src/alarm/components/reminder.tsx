@@ -5,10 +5,11 @@
 /* eslint-disable react/self-closing-comp */
 
 import React, {useEffect} from 'react';
-import {View, Text, Dimensions, ScrollView, Alert} from 'react-native';
+import {View, Text,ScrollView, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
 import {Divider} from 'react-native-elements/dist/divider/Divider';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -23,13 +24,12 @@ import {
 import {TextInput} from 'react-native-paper';
 import CheckBox from 'react-native-check-box';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
-import DateTimePicker from 'react-native-modal-datetime-picker';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import globalDb from '../../repositories/database/globalDb';
 import styles from '../alarmStyles/reminderStyles';
 
 
-var counter = 0;
+let counter = 0;
 
 const Reminder = ({route, navigation}) => {
   const db = globalDb();
@@ -40,7 +40,7 @@ const Reminder = ({route, navigation}) => {
       txn.executeSql(
         'SELECT * FROM `User_medicines` where user_id = ? AND status = ?',
         [id, 1],
-        function (tx, res) {
+        function (res) {
           console.log('success');
           console.log(res.rows.item(0));
           titlestate(res.rows.item(0).title);
@@ -51,7 +51,7 @@ const Reminder = ({route, navigation}) => {
   }, []);
 
   const multiSliderValuesChange = values => {
-    var curr_date = new Date();
+    let curr_date = new Date();
     console.log(curr_date);
     console.log(curr_date.setDate(curr_date.getDate() + values[0]));
 
@@ -65,12 +65,12 @@ const Reminder = ({route, navigation}) => {
   console.log(id);
 
   const [picker, pickerstate] = React.useState(false);
-  const [selectedItems, slectedstate] = React.useState([]);
+  const [selectedItems] = React.useState([]);
   const [selecteddaysItems, slecteddaysstate] = React.useState([]);
   const [load, loadstate] = React.useState(false);
   const [start_date, start_datestate] = React.useState(new Date());
   const [end_date, end_datestate] = React.useState(new Date());
-  const [store_start_date, store_start_datestate] = React.useState<any>(
+  const [store_start_date] = React.useState<any>(
     new Date(),
   );
   const [store_end_date, store_end_datestate] = React.useState(new Date());
@@ -97,7 +97,7 @@ const Reminder = ({route, navigation}) => {
 
   const setreminderwithselecteddate = (titl: any) => {
     counter = 0;
-    var now = new Date();
+    let now = new Date();
 
     now.setDate(start_date.getDate());
 
@@ -105,11 +105,10 @@ const Reminder = ({route, navigation}) => {
     console.log(new Date(Date.now()));
     console.log('now', now);
     let sample_date = new Date(start_date);
-    var weeks: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
-    var set = new Set<String>(selecteddaysItems);
+    let weeks: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+    let set = new Set<string>(selecteddaysItems);
     if (check1) {
       timeings.forEach((timee: any) => {
-        // var num = Math.floor(Math.random() * 90000) + 10000;
         counter += 1;
         let timm_array = timee.split(':');
 
@@ -152,7 +151,6 @@ const Reminder = ({route, navigation}) => {
       now.setMonth(sample_date.getMonth());
       if (set.has(weeks[now.getDay()])) {
         timeings.forEach((timee: any) => {
-          // var num = Math.floor(Math.random() * 90000) + 10000;
           counter += 1;
           let timm_array = timee.split(':');
 
@@ -245,7 +243,6 @@ const Reminder = ({route, navigation}) => {
       Alert.alert('Make sure you have valid reminder', ' ', [
         {
           text: 'OK',
-          onPress: () => {},
         },
       ]);
       return;
@@ -304,7 +301,7 @@ const Reminder = ({route, navigation}) => {
         ],
       );
 
-      txn.executeSql('SELECT * FROM `User_medicines`', [], function (tx, res) {
+      txn.executeSql('SELECT * FROM `User_medicines`', [], function (res) {
         for (let i = 0; i < res.rows.length; ++i) {
           console.log('item:', res.rows.item(i));
         }

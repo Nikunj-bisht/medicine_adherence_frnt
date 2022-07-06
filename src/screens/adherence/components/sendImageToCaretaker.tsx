@@ -1,9 +1,5 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-bitwise */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react-native/no-inline-styles */
 import {Image, Modal, ScrollView, TouchableOpacity, View} from 'react-native';
-import { API_URL } from '../../repositories/var';
+import {API_URL} from '../../../repositories/var';
 import React, {useState} from 'react';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -13,10 +9,10 @@ import * as Progress from 'react-native-progress';
 import Toast from 'react-native-toast-message';
 import Share from 'react-native-share';
 import {LogBox} from 'react-native';
-import Fetchdata from '../../repositories/database/queryData';
-import globalDb from '../../repositories/database/globalDb';
+import Fetchdata from '../../../repositories/database/queryData';
+import globalDb from '../../../repositories/database/globalDb';
 import styles from '../adherenceStyles/senImageToCareTakerStyles';
-import {showToast} from '../../components/atoms/toast';
+import {showToast} from '../../../components/atoms/toast';
 
 LogBox.ignoreLogs(['Require cycle:']);
 interface Props {
@@ -147,6 +143,7 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
       (todayDate.getMonth() + 1) +
       '-' +
       todayDate.getFullYear();
+
     let imagesData = await AsyncStorage.getItem(setDate + ' ' + medName);
     if (imagesData !== null) {
       let parsedData = JSON.parse(imagesData);
@@ -196,7 +193,7 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
     })
       .then(() => {
         setModalVisible(false);
-
+        showToast("Image sent");
         setTimeout(() => {
           navigation.pop(1);
         }, 1000);

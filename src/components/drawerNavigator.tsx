@@ -1,6 +1,6 @@
 import React from 'react';
-import CareTaker from '../caretaker/caretaker';
-import Caretakercomp from '../caretaker/components/caretakerComp';
+import CareTaker from '../screens/caretaker/caretaker';
+import Caretakercomp from '../screens/caretaker/components/caretakerComp';
 import Patientcomp from '../patient/patient';
 import CustomHeader from './customHeader';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -16,7 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
-import CameraScreen from '../adherence/components/clickSendImage';
+import CameraScreen from '../screens/adherence/components/clickSendImage';
 import {TouchableOpacity} from 'react-native';
 
 const Drawer = createDrawerNavigator();

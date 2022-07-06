@@ -4,7 +4,7 @@
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 import React, {useEffect} from 'react';
-import {Text, View, Image, ScrollView, Alert} from 'react-native';
+import {Text, View, Image, ScrollView, Alert,RefreshControl} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   faContactBook,
@@ -27,6 +27,8 @@ import styles from './ProfileStyles/profileStyles';
 import SavedDetails from './savedDetails';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import {useFocusEffect} from '@react-navigation/native';
+import { useDispatch,useSelector } from 'react-redux';
+import { fetchpatientProfile } from '../redux/actions/patientProfileActions';
 
 const loginValidationSchema = yup.object().shape({
   Bio: yup.string().required('Bio is Required'),
@@ -79,6 +81,19 @@ const Profile = ({navigation}) => {
     let sblood = await AsyncStorage.getItem('bloodgroup');
 
     const user_id = await AsyncStorage.getItem('user_id');
+    
+    
+    // const {load} = useSelector(
+    //   state => state.fetchPatientprofile);
+    // console.log(load,'load');
+    
+    // const dispatch = useDispatch();
+    // const fetchpatientProfile = async () => {
+    //   let user_id = await AsyncStorage.getItem('user_id');
+    //   dispatch(fetchpatientProfile(user_id));
+    //   refeereshstate(false);
+      
+    // }
 
     await fetch(`${API_URL}/api/v1/user-details?userId=${user_id}`, {
       method: 'PUT',

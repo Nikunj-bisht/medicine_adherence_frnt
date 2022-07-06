@@ -1,9 +1,9 @@
 /* eslint-disable react/self-closing-comp */
 import {Text} from 'react-native';
 import React from 'react';
-import Addmedicine from '../screens/addMedicine';
+import Addmedicine from '../addMedicine';
 import {createStackNavigator} from '@react-navigation/stack';
-import UserMed from '../screens/userMed';
+import UserMed from '../userMed';
 const Stack = createStackNavigator();
 
 const CareTaker = ({navigation}) => {
