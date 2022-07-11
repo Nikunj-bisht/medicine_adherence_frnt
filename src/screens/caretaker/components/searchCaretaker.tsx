@@ -12,7 +12,6 @@ import UserAvatar from 'react-native-user-avatar';
 import styles from '../CaretakerStyles/searchCaretakerStyles';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {showToast} from '../../../components/atoms/toast';
-import { debounce } from 'lodash.debounce'
 
 const Searchcaretaker = ({navigation}) => {
   const [data, datastate] = React.useState([]);

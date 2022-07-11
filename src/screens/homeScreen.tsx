@@ -11,7 +11,7 @@ import {IconProp} from '@fortawesome/fontawesome-svg-core';
 
 import Medicineadherence from './adherence/components/medicineAdherence';
 import Addmedicine from './addMedicine';
-import Profile from '../profile/profile';
+import Profile from './profile/profile';
 import styles from './screenStyles/homeScreenStyles';
 
 

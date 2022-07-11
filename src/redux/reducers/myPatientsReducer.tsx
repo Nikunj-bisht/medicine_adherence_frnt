@@ -5,7 +5,7 @@ let initialState = {
   myPatientList: [],
 };
 
-const myPatientsReducer = (state = initialState, {type, payload}) => {
+const myPatientsReducer = (state = initialState, {type, payload}) => {     //NO SONAR
   switch (type) {
     case Types.SUCCESS_GET_PATIENTS :
       return {

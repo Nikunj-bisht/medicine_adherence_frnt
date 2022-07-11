@@ -4,22 +4,18 @@
 import React from 'react';
 import {View, FlatList, Image, RefreshControl} from 'react-native';
 import {Card} from 'react-native-paper';
-import {Avatar} from 'react-native-elements';
+import {Avatar,ListItem,Button} from 'react-native-elements';
 import { API_URL } from '../../repositories/var';
-import {ListItem, Button} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
 import styles from '../patientStyles/patientRequestStyles';
-import { useDispatch,useSelector } from 'react-redux';
-import { fetchpatientrequests } from '../../redux/actions/patientRequestActions';
-
+import { useDispatch} from 'react-redux';
+import { useEffect } from 'react';
+import { fetchAcceptRequest } from '../../redux/actions/acceptRequestActions';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Patientrequest = () => {
   const [patients, patientsdata] = React.useState([]);
   const [refresh, refreshstate] = React.useState(false);
-  // const dispatch = useDispatch();
-  // const fetchpatientreq = async 
-
-
   const fetchpatientreq = () => {
     fetch(
       `${API_URL}/api/v1/patient/requests?caretakerId=d0aba7ce-1e7f-458e-8090-8cc62c00c3c5`,
@@ -48,6 +44,19 @@ const Patientrequest = () => {
       };
     }, []),
   );
+  /*const dispatch = useDispatch();
+  const fetchacceptRequest = async  () => {
+    let caretaker_id = await AsyncStorage.getItem('caretaker_id');
+    dispatch(fetchAcceptRequest(caretaker_id));
+    refreshstate(false);
+  };
+
+  useEffect(() => {
+    fetchacceptRequest();
+  }, []);
+  const renderitem = ({item}) => {
+    console.log(item.c_id, 'b');*/
+  };
   const acceptrequest = (ci_id: string) => {
     let url: any = new URL(`${API_URL}/api/v1/accept`);
     url.searchParams.append('cId', ci_id);
@@ -58,7 +67,7 @@ const Patientrequest = () => {
         fetchpatientreq();
       })
       .catch(err => console.log(err));
-  };
+   
   const deletereq = (ci_id: string) => {
     let url: any = new URL(`${API_URL}/api/v1/delete`);
     url.searchParams.append('cId', ci_id);

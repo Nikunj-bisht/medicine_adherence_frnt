@@ -9,7 +9,6 @@ import {View, Text,ScrollView, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
 import {Divider} from 'react-native-elements/dist/divider/Divider';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import DateTimePicker from 'react-native-modal-datetime-picker';
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -151,7 +150,7 @@ const Reminder = ({route, navigation}) => {
       now.setMonth(sample_date.getMonth());
       if (set.has(weeks[now.getDay()])) {
         timeings.forEach((timee: any) => {
-          counter += 1;
+          counter += 1;                      //NOSONAR false positive
           let timm_array = timee.split(':');
 
           now.setHours(timm_array[0]);

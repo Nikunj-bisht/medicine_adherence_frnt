@@ -14,7 +14,7 @@ import ProgressCircle from 'react-native-progress-circle';
 import {Button, Divider} from 'react-native-elements';
 import {Card} from 'react-native-paper';
 import {useFocusEffect} from '@react-navigation/native';
-import NetworkCalls from '../../connectivity/network';
+import NetworkCalls from '../../connectivity/NetworkCalls';
 import * as Animatable from 'react-native-animatable';
 import Downloadpdf from '../../screens/adherence/common/downloadPdf';
 import LottieView from 'lottie-react-native';
@@ -109,7 +109,6 @@ const Reminders = ({item, index}) => {
 export default function PatientReport({route}) {
   const {
     medId,
-    adherenceRate,
     medName,
     mTimes,
     medDays,

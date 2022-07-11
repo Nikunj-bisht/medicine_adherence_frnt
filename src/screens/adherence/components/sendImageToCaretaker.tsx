@@ -22,7 +22,7 @@ interface Props {
 
 const db = globalDb();
 let medName = '';
-let medId: Number = 0;
+let medId: number = 0;
 const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
   const {image_uri} = route.params;
   const [mycaretakers, mycaretakerstate] = useState([]);
@@ -162,14 +162,14 @@ const SendImageToCaretaker: React.FC<Props> = ({route, navigation}: Props) => {
       );
     }
     const formdata = new FormData();
-    var dt = new Date().getTime();
+    let dt = new Date().getTime();
 
     let patientName = await AsyncStorage.getItem('user_name');
 
-    var file_name = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+    let file_name = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
       /[xy]/g,
       function (c) {
-        var r = (dt + Math.random() * 16) % 16 | 0;
+        let r = (dt + Math.random() * 16) % 16 | 0;
         dt = Math.floor(dt / 16);
         return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
       },

@@ -29,10 +29,6 @@ const Addmedicine = ({navigation}: Props) => {
   useFocusEffect(
     React.useCallback(() => {
       fetch_meds();
-
-      return () => {
-        true;
-      };
     }, []),
   );
 

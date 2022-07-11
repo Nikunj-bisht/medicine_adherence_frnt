@@ -1,31 +1,51 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import Toast from 'react-native-toast-message';
 import {
   GoogleSignin,
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
-import messaging from '@react-native-firebase/messaging';
-import {Signupuser} from '../../repositories/signup/signUp';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Progress from 'react-native-progress';
-import styles from "../loginStyles/loginStyles";
+import Toast from 'react-native-toast-message';
+import messaging from '@react-native-firebase/messaging';
+import Checkconnectivity from '../../../connectivity/checkConnectivity';
+import LottieView from 'lottie-react-native';
+import {Text} from 'react-native-elements';
+import {Signupuser} from '../../../repositories/signup/signUp';
+import styles from "../loginStyles/googleAuthStyles";
 
 
+interface Props {
+  navigation: any;
+}
 
-const Loginscreen = ({navigation}) => {
+const Login: React.FC<{navigation}> = Props => {
+  const {navigation} = Props;
   const [loading, loadingstate] = React.useState(false);
+  const [connectedstate] = React.useState(false);
 
-  async function loginuser() {
+  async function checkconnection() {
+    let conn: any = await Checkconnectivity();
+    connectedstate(conn);
+  }
+  React.useEffect(() => {
+    checkconnection();
+    GoogleSignin.configure({
+      webClientId:
+        '526586885579-90t54t6rmkquqjct1819getnkstse41j.apps.googleusercontent.com',
+    });
+  });
+  async function onGoogleButtonPress() {
     try {
       await GoogleSignin.hasPlayServices();
       const userinfo = await GoogleSignin.signIn();
       const token = await messaging().getToken();
       loadingstate(true);
-      const response = await Signupuser.loginuser({userinfo, token});
+      const response = await Signupuser.signup({userinfo, token});
       const res: any = await response.json();
-      console.log(res);
+
       if (res.status === 'Success') {
         await AsyncStorage.setItem('user_id', res.userEntity[0].userId);
         await AsyncStorage.setItem('user_name', res.userEntity[0].userName);
@@ -44,11 +64,10 @@ const Loginscreen = ({navigation}) => {
         loadingstate(false);
         Toast.show({
           type: 'info',
-          text1: 'Error while login',
+          text1: 'User with this email already present',
         });
       }
     } catch (err: any) {
-      console.log(err);
       if (await GoogleSignin.isSignedIn()) {
         await GoogleSignin.signOut();
       }
@@ -63,22 +82,28 @@ const Loginscreen = ({navigation}) => {
     <View
       style={styles.container}>
       <Toast visibilityTime={3000} />
-      <Text style={styles.loginText}>
-        {'LOGIN'}
-      </Text>
+      <Text style={styles.createText}>Create an account</Text>
+      <LottieView
+        style={styles.lottie}
+        source={require('../../../../assests/animate/google.json')}
+        autoPlay
+        loop
+      />
+
       <GoogleSigninButton
-        style={styles.signInButton}
+        style={styles.googleSignIn}
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={() =>
-          loginuser()
+          onGoogleButtonPress()
             .then(() => console.log('Google'))
             .catch(err => console.log(err))
         }
       />
+
       {loading && (
         <Progress.CircleSnail
-          spinDuration={1500}
+          spinDuration={1000}
           size={80}
           color={['red', 'green', 'yellow']}
         />
@@ -87,4 +112,4 @@ const Loginscreen = ({navigation}) => {
   );
 };
 
-export default Loginscreen;
+export default Login;

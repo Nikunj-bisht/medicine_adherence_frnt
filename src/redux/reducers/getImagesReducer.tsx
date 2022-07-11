@@ -5,9 +5,9 @@ let initialState = {
     imagesList: [],
   };
   
-  const CareTakerReducer = (state = initialState, {type, payload}) => {
+  const getImagesReducer = (state = initialState, {type, payload}) => {  //NO SONAR
     switch (type) {
-      case Types.SUCCES_GET_IMAGES:
+      case Types.SUCCESS_GET_IMAGES:
         return {
           load: false,
           ImagesList: payload.ImagesList,
@@ -22,4 +22,4 @@ let initialState = {
     }
   };
   
-  export default getImageReducer;
+  export default getImagesReducer;

@@ -6,7 +6,7 @@ let initialState ={
     pdfList : [],
 };
 
-const getPdFReducer = (state = initialState, {type, payload}) => {
+const getPdFReducer = ( {type, payload},state = initialState) => {   //NO SONAR
     switch(type) {
         case Types.SUCCESS_SEND_PDF:
             return {

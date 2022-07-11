@@ -1,6 +1,6 @@
 import Types from './allTypes';
 
-export function getImageRequest(medId: Number) {
+export function getImageRequest(medId: number) {
   return {
     type: Types.GET_IMAGES,
     payload: medId,

@@ -80,7 +80,7 @@ const MedicineImages = ({route}) => {
       .then(resp => resp.json())
       .then(response => {
         let map = new Map();
-        for (let re = 0; re < response.length; re++) {
+        for(let re = 0; re < response.length; re++) {
           if (map.has(response[re].date)) {
             map.get(response[re].date).push(response[re]);
           } else {
@@ -98,9 +98,6 @@ const MedicineImages = ({route}) => {
     React.useCallback(() => {
       let isActive = false;
       fetchImages();
-      return () => {
-        isActive = true;
-      };
     }, []),
   );
 

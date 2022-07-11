@@ -12,13 +12,12 @@ import {Picker} from '@react-native-picker/picker';
 import {Button, Divider} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
 import Allreminderdata from '../common/allreminderdata';
-import {LogBox, Modal} from 'react-native';
 import Fetchdata from '../../../repositories/database/queryData';
 import * as Progress from 'react-native-progress';
 import LottieView from 'lottie-react-native';
 import Downloadpdf from '../common/downloadPdf';
 import MedicinehistoryList from '../organisms/medicineHistoryList';
-import globalDb from '../../../repositories/database/globaNlDb';
+import globalDb from '../../../repositories/database/globalDb';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import styles from '../adherenceStyles/adherenceHistoryStyles';
 import Adherence from '../../../repositories/adherence/adherence';
@@ -31,7 +30,7 @@ interface singledate {
 }
 
 const MyComponent: React.FC = () => {
-  const [pickerValue, setPickerValue] = React.useState<String>('');
+  const [pickerValue, setPickerValue] = React.useState<string>('');
   const [allreminders, reminders_state] = React.useState<[]>([]);
   const [reminder_map_fetched_data, reminder_map_fetched_data_state] =
     React.useState<[]>([]);

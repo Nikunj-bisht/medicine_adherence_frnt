@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
+import { Text, View, Image} from 'react-native';
 import React from 'react';
 import styles from "./screenStyles/aboutAppStyles";
 

@@ -1,6 +1,6 @@
 import Types from './allTypes';
 
-export function fetchPatients(user_id: String) {
+export function fetchPatients(user_id: string) {
   return {
     type: Types.GET_PATIENTS,
     payload: user_id,

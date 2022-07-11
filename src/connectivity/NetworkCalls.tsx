@@ -1,7 +1,7 @@
 import { API_URL } from "../repositories/var";
 
 const NetworkCalls = {
-  synchistory: async (medId: Number, medHistory: any) => {
+  synchistory: async (medId: number, medHistory: any) => {
     console.log(medHistory);
     let response = await fetch(
       `${API_URL}/api/v1/medicine-history/sync?medId=${medId}`,
