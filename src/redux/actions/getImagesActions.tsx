@@ -19,5 +19,11 @@ export function getImageFailure(data) {
     payload: data,
   };
 }
+export const getImagesActions = {
+  getImageRequest,
+  getImageSuccess,
+  getImageFailure,
+}
+
 
 

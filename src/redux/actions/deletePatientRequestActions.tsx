@@ -20,3 +20,8 @@ export function deletePatientRequestFailure(error) {
         payload:error,
     }
 }
+export const deletePatientActions = {
+    deletePatientRequest,
+    deletePatientRequestSuccess,
+    deletePatientRequestFailure,
+  }

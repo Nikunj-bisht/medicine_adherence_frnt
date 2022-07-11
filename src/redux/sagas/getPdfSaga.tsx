@@ -4,7 +4,7 @@ import {
     getPdfSuccess,
     getPdfFailure
 } from '../actions/getPdfActions';
-import { getPdfRequest } from '../actions/getPdfActions';
+
 
 function* getpdf({payload}) {
     try{

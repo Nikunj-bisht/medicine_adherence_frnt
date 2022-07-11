@@ -20,3 +20,8 @@ export function fetchCaretakerserror(error) {
     payload: error,
   };
 }
+export const caretakerActions = {
+  fetchCaretakers,
+  fetchCaretakerssuccess,
+  fetchCaretakerserror
+}

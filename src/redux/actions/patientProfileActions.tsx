@@ -20,4 +20,8 @@ export function fetchpatientProfile(user_id: string) {
       payload: error,
     };
   }
-  
+  export const patientProfileActions = {
+    fetchpatientProfile,
+    fetchpatientProfilesuccess,
+    fetchpatientProfilerror
+  }

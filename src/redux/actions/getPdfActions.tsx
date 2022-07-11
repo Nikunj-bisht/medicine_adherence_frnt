@@ -19,3 +19,8 @@ export function getPdfFailure(error) {
     payload: error,
   };
 }
+export const getPdfActions = {
+  getPdfRequest,
+  getPdfSuccess,
+  getPdfFailure
+}

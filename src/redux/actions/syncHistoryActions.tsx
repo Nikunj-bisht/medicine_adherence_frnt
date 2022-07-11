@@ -20,3 +20,8 @@ export function putSyncHistoryerror(error) {
     payload: error,
   };
 }
+export const syncHistoryActions = {
+  putSyncHistory,
+  putSyncHistorysuccess,
+  putSyncHistoryerror
+}

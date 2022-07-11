@@ -20,3 +20,8 @@ export function getPatientRequestFailure(error) {
         payload:error,
     }
 }
+export const getPatientRequestActions = {
+    getPatientRequest,
+    getPatientRequestSuccess,
+    getPatientRequestFailure
+  }

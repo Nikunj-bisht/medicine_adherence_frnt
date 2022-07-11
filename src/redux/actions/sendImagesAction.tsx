@@ -6,11 +6,11 @@ export function sendImageRequest(medId: number) {
   };
 }
 
-export function sendImageSuccess(image) {
+export function sendImageSuccess(number) {
 
     return{
         type: Types.SUCCES_SEND_IMAGES,
-        payload: image,
+        payload: number,
     };
 }
 export function sendImageFailure(error) {
@@ -19,4 +19,10 @@ export function sendImageFailure(error) {
       type: Types.FAILED_GET_IMAGES,
       payload: error,
     };
+}
+export const sendImagesAction = {
+  sendImageRequest,
+  sendImageSuccess,
+  sendImageFailure
+  
 }

@@ -20,3 +20,8 @@ export function fetchPatienterror(error) {
     payload: error,
   };
 }
+export const myPatientsActions = {
+  fetchPatients,
+  fetchPatientsuccess,
+  fetchPatienterror,
+}

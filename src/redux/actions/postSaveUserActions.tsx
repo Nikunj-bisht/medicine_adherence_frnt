@@ -20,3 +20,9 @@ export function postSaveUserDetailserror(error:any) {
     payload: error,
   };
 }
+export const postSaveUserActions = {
+  postSaveUserDetails,
+  postSaveUserDetailssuccess,
+  postSaveUserDetailserror
+  
+}

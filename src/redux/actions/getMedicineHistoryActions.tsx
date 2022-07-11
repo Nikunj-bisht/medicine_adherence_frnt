@@ -20,3 +20,8 @@ export function getMedicineHistoryRequestFailure(error) {
         payload:error,
     }
 }
+export const getMediceneHistoryActions = {
+    getMedicineHistoryRequest,
+    getMedicineHistoryRequestFailure,
+    getMedicineHistoryRequestSuccess
+  }

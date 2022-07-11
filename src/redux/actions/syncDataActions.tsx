@@ -20,3 +20,8 @@ export function postSyncDataerror(error) {
     payload: error,
   };
 }
+export const syncDataActions = {
+  postSyncData,
+  postSyncDatasuccess,
+  postSyncDataerror
+}

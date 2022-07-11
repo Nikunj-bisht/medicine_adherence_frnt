@@ -20,3 +20,9 @@ export function fetchpatienterror(error){
         PAYLOAD:error,
     };
 }
+export const patientRequestActions = {
+    fetchpatientrequests,
+    fetchpatientsuccess,
+    fetchpatienterror
+    
+}
