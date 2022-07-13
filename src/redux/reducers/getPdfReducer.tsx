@@ -1,26 +1,22 @@
 import { State } from "react-native-gesture-handler";
 import Types from "../actions/allTypes";
 
-let initialState ={
-    load: true,
-    pdfList : [],
+const initialState = {
+  data: null,
+  loading: false,
+  error: null,
 };
-
-const getPdFReducer = ( {type, payload},state = initialState) => {   //NO SONAR
-    switch(type) {
-        case Types.SUCCESS_SEND_PDF:
-            return {
-                load:false,
-                pdfList: payload.pdfList,
-            };
-            case Types.FAILED_SEND_PDF:
-            return {
-                ...state,
-                pdfList: [],
-            }
-            default:
-                return State;
-    }
+const getPdFReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Types.GET_SEND_PDF:
+      return {data: null, loading: true, error: null};
+    case Types.SUCCESS_SEND_PDF:
+      return {data: action.data, loading: false, error: null};
+    case Types.FAILED_SEND_PDF:
+      return {data: null, loading: true, error: action.data};
+    default:
+      return initialState;
+  }
 };
 
 export default getPdFReducer;

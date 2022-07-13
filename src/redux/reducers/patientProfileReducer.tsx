@@ -1,25 +1,23 @@
+import { State } from "react-native-gesture-handler";
 import Types from "../actions/allTypes";
 
 let initialState={
+    data: {},
     load:true,
-    userProfileList:[],
+    error: '',
 };
 
- function  ProfileReducer(state = initialState, {type, payload}) => {
-    switch (type) {
-      case Types.SUCCESS_GET_PROFILE:
-        return {
-          load: false,
-          userProfileList: payload.userProfileList,
-        };
-      case Types.FAILED_GET_PROFILE:
-        return {
-          ...state,
-          userProfileList: [],
-        };
-      default:
-        return state;
-    }
-  };
+const patientProfileReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Types.GET_PROFILE:
+      return {...state, loading: true};
+    case Types.SUCCESS_GET_PROFILE:
+      return {data: action.data, loading: false, error: null};
+    case Types.FAILED_GET_PROFILE:
+      return {data: null, loading: true, error: action.data};
+    default:
+      return initialState;
+  }
+};
   
 export default patientProfileReducer;

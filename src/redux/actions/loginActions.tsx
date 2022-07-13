@@ -1,23 +1,29 @@
-import Types from "./allTypes";
-
-export function sendLoginRequest(data){
-return{
+import Types from './allTypes';
+interface Iparams {
+  userinfo: any;
+  token: string;
+}
+function sendLoginRequest(params) {
+  return {
     type: Types.LOGIN_REQUEST,
-    payload:data,
-};
+    payload: params,
+  };
 }
-
-export function sendLoginSuccess(data){
- return{
-    type: Types.SUCCESSFUL_LOGIN,
+function LoginSuccess(data) {
+  return {
+    type: Types.SUCCESS_LOGIN,
     payload: data,
- };
+  };
 }
-
-export function sendLoginFailure(error) {
-    console.log(error, 'login failed');
-    return{
-        type: Types.FAILED_LOGIN,
-        payload: error,
-    };
+function LoginFailure(error) {
+  console.log(error, 'login failed');
+  return {
+    type: Types.FAILED_LOGIN,
+    payload: error,
+  };
 }
+export const loginActions = {
+  sendLoginRequest,
+  LoginSuccess,
+  LoginFailure,
+};

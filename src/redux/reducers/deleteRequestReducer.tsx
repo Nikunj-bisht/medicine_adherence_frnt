@@ -1,24 +1,21 @@
-import Types from '../actions/allTypes';
+import { State } from "react-native-gesture-handler";
+import Types from "../actions/allTypes";
 
-let initialState = {
-  load: true,
-  userDetails: [],
+const initialState = {
+  data: {},
+  loading: false,
+  error: '',
 };
-
-const deleteRequestReducer = (state = initialState, {type, payload}) => {  //NO SONAR 
-  switch (type) {
+const deleteRequestReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Types.GET_DELETE_PATIENT_REQUEST:
+      return {...state, loading: true};
     case Types.SUCCESS_GET_DELETE_PATIENT_REQUEST:
-      return {
-        load: false,
-        userDetails: payload.userDetails,
-      };
+      return {data: action.data, loading: false, error: null};
     case Types.FAILED_GET_DELETE_PATIENT_REQUEST:
-      return {
-        ...state,
-        userDetails: [],
-      };
+      return {data: null, loading: true, error: action.data};
     default:
-      return state;
+      return initialState;
   }
 };
 

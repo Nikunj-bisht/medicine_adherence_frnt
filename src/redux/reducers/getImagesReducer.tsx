@@ -1,25 +1,22 @@
-import axios from "../apis/axiosDeclaration";
+import { State } from "react-native-gesture-handler";
+import Types from "../actions/allTypes";
 
-let initialState = {
-    load: true,
-    imagesList: [],
-  };
-  
-  const getImagesReducer = (state = initialState, {type, payload}) => {  //NO SONAR
-    switch (type) {
-      case Types.SUCCESS_GET_IMAGES:
-        return {
-          load: false,
-          ImagesList: payload.ImagesList,
-        };
-      case Types.FAILED_GET_IMAGES:
-        return {
-          ...state,
-          userCaretakerList: [],
-        };
-      default:
-        return state;
-    }
-  };
-  
-  export default getImagesReducer;
+const initialState = {
+  data: {},
+  loading: false,
+  error: '',
+};
+const getImagesReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Types.GET_IMAGES:
+      return {...state, loading: true};
+    case Types.SUCCES_GET_IMAGES:
+      return {data: action.data, loading: false, error: null};
+    case Types.FAILED_GET_IMAGES:
+      return {data: null, loading: true, error: action.data};
+    default:
+      return initialState;
+  }
+};
+
+export default getImagesReducer;
