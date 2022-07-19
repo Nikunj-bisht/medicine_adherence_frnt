@@ -14,12 +14,12 @@ import ProgressCircle from 'react-native-progress-circle';
 import {Button, Divider} from 'react-native-elements';
 import {Card} from 'react-native-paper';
 import {useFocusEffect} from '@react-navigation/native';
-import NetworkCalls from '../../connectivity/NetworkCalls';
+import NetworkCalls from '../../../connectivity/NetworkCalls';
 import * as Animatable from 'react-native-animatable';
-import Downloadpdf from '../../screens/adherence/common/downloadPdf';
+import Downloadpdf from '../../adherence/common/downloadPdf';
 import LottieView from 'lottie-react-native';
-import HistoryDetail from '../../screens/components/historyDetail';
-import AdherencePercentage from '../../screens/adherence/common/adherencePercentage';
+import HistoryDetail from '../../components/historyDetail';
+import AdherencePercentage from '../../adherence/common/adherencePercentage';
 import styles from '../patientStyles/patientReportStyles';
 
 let detailData = {};
@@ -196,7 +196,7 @@ export default function PatientReport({route}) {
             <LottieView
               style={styles.lottie}
               speed={0.8}
-              source={require('../../../assests/animate/generatepdf.json')}
+              source={require('../../../../assests/animate/generatepdf.json')}
               autoPlay
               loop
             />

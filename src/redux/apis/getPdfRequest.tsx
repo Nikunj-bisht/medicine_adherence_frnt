@@ -1,3 +1,4 @@
+import { getPdfRequest } from "../actions/getPdfActions";
 import axios from "./axiosDeclaration";
 
 async function sendpdf(payload){
@@ -7,4 +8,4 @@ async function sendpdf(payload){
     return response.data;
 }
 
-export default sendpdf;
+export default getPdfRequest;

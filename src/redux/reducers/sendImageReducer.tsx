@@ -1,4 +1,3 @@
-import { State } from "react-native-gesture-handler";
 import Types from "../actions/allTypes";
 import axios from "../apis/axiosDeclaration";
 

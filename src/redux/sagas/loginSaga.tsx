@@ -2,8 +2,8 @@ import { call,put,takeEvery } from "redux-saga/effects";
 import Types from "../actions/allTypes";
 
 import {
-    sendLoginSuccess,
-    sendLoginFailure,
+    LoginSuccess,
+    LoginFailure,
 } from '../actions/loginActions';
 import sendLoginRequest from "../apis/login";
 
@@ -11,16 +11,16 @@ function* sendloginreq({payload}) {
     try{
         const data = yield call(sendLoginRequest, payload);
         console.log(data,'called');
-        yield put(sendLoginSuccess(data));
+        yield put( LoginSuccess(data));
     } catch (err) {
         console.log(err,'login error');
 
-        yield put(sendLoginRequest(err));
+        yield put(LoginFailure(err));
     }
 
 }
 export default function* loginSaga() {
-    yield takeEvery(Types.GET_USER_LOGIN,sendloginreq );
+    yield takeEvery(Types.LOGIN_REQUEST,sendloginreq );
 }
 
 

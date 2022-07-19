@@ -15,10 +15,10 @@ import Login from '../screens/login/components/googleOauth';
 import Loginscreen from '../screens/login/components/loginScreen';
 import Profile from '../screens/profile/profile';
 import About from '../screens/aboutApp';
-import MedicineImages from '../patient/components/medicineImages';
+import MedicineImages from '../screens/patient/components/medicineImages';
 import OnboardingScreen from '../screens/OnboardingScreen';
-import ViewProfile from '../patient/components/patientProfile';
-import PatientReport from '../patient/components/patientReport';
+import ViewProfile from '../screens/patient/components/patientProfile';
+import PatientReport from '../screens/patient/components/patientReport';
 import DrawerNavigator from '../components/drawerNavigator';
 import UserMed from '../screens/userMed';
 

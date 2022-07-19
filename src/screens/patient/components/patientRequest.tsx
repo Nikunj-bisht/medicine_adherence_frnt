@@ -5,12 +5,12 @@ import React from 'react';
 import {View, FlatList, Image, RefreshControl} from 'react-native';
 import {Card} from 'react-native-paper';
 import {Avatar,ListItem,Button} from 'react-native-elements';
-import { API_URL } from '../../repositories/var';
+import { API_URL } from '../../../repositories/var';
 import {useFocusEffect} from '@react-navigation/native';
 import styles from '../patientStyles/patientRequestStyles';
 import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAcceptRequest } from '../../redux/actions/acceptRequestActions';
+import { fetchAcceptRequest } from '../../../redux/actions/acceptRequestActions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Patientrequest = () => {
@@ -139,7 +139,7 @@ const Patientrequest = () => {
       {patients.length === 0 && (
         <View style={styles.imgView}>
           <Image
-            source={require('../../../assests/nopatientreq.png')}
+            source={require('../../../../assests/nopatientreq.png')}
             style={styles.img}
             resizeMode="contain"></Image>
         </View>

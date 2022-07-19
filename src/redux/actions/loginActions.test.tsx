@@ -28,4 +28,5 @@ describe('test loginActions', () => {
       payload: err,
     });
   });
-});
+}
+);

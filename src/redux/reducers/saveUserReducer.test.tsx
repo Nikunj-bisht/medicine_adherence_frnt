@@ -1,4 +1,4 @@
-import saveUserReducer from './saveUserReducer'
+import saveUserReducer from './saveUserReducer';
 describe("test download pdf",()=>{
    it("check for save user details",()=>{
        const action={

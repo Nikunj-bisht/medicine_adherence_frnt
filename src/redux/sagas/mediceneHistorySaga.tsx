@@ -18,6 +18,6 @@ function* getmedicenehistory({payload}) {
   }
 }
 
-export default function* caretakerSaga() {
+export default function* mediceneHistorySaga() {
   yield takeEvery(Types.GET_MEDICENE_HISTORY, getmedicenehistory);
 }

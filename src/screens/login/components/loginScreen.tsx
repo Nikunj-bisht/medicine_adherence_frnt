@@ -27,14 +27,15 @@ const Loginscreen = ({navigation}) => {
       const res: any = await response.json();
       console.log(res);
       if (res.status === 'Success') {
-        await AsyncStorage.setItem('user_id', res.userEntity[0].userId);
         await AsyncStorage.setItem('user_name', res.userEntity[0].userName);
+        await AsyncStorage.setItem('user_id', res.userEntity[0].userId);
+        loadingstate(false);
         await AsyncStorage.setItem('jwt', res.jwt);
         Toast.show({
           type: 'success',
-          text1: 'Account created successfully',
+          text1: 'successfully Account created ',
         });
-        loadingstate(false);
+        
 
         setTimeout(() => {
           navigation.pop(1);

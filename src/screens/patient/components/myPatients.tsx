@@ -1,7 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { API_URL } from '../../repositories/var';
+import { API_URL } from '../../../repositories/var';
 import {
   FlatList,
   RefreshControl,
@@ -134,7 +134,7 @@ interface Props {
       {data.length === 0 && (
         <View style={styles.imgView}>
           <Image
-            source={require('../../../assests/nopatients.png')}
+            source={require('../../../../assests/nopatients.png')}
             style={styles.img}
             resizeMode="contain"></Image>
         </View>

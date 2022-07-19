@@ -5,7 +5,7 @@ describe("test postSaveUserActions",()=>{
     const err = "SomeError"
     const string= "medId"
     it("test postSaveUser",()=>{
-        expect(sendImagesAction .sendImageRequest(number)).toEqual({
+        expect(sendImagesAction .sendImageRequest(string)).toEqual({
             type: Types.SEND_IMAGES,
             payload:string,
         })

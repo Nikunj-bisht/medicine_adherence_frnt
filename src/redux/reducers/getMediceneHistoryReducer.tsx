@@ -5,7 +5,7 @@ let initialState = {
   userMediceneList: [],
 };
 
-const getMediceneHistoryReducer = (state = initialState, {type, payload}) => {   //NO SONAR
+const getMediceneHistoryReducer = (state = initialState, {type, payload}) => {    
   switch (type) {
     case Types.SUCCESS_MEDICINE_HISTORY:
       return {

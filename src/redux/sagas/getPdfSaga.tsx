@@ -4,11 +4,12 @@ import {
     getPdfSuccess,
     getPdfFailure
 } from '../actions/getPdfActions';
+import sendpdf from '../apis/getPdfRequest';
 
 
 function* getpdf({payload}) {
     try{
-        const data = yield call(getPdfRequest, payload);
+        const data = yield call(sendpdf, payload);
         console.log(data, 'called');
         yield put(getPdfSuccess(data));
     } catch(err) {
@@ -19,5 +20,5 @@ function* getpdf({payload}) {
 }
 
 export default function* getPdfSaga(){
-    yield takeEvery(Types.GET_SEND_PDF, getPdfRequest);
+    yield takeEvery(Types.GET_SEND_PDF, getpdf);
 }

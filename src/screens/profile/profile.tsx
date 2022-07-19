@@ -396,6 +396,7 @@ const Profile = ({navigation}) => {
                           </View>
                           <View style={styles.saveButtonView}>
                             <Button
+                              testID="savebutton"
                               loading={load}
                               onPress={handleSubmit}
                               title="SAVE"
