@@ -19,7 +19,7 @@ const defaultConfig = {
     },
   },
 };
-var log = logger.createLogger(defaultConfig);
+let log = logger.createLogger(defaultConfig);
 
 function sendSignupRequest(params: Iparams) {
   return {
