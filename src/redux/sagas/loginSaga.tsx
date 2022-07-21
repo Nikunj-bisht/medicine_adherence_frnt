@@ -6,14 +6,34 @@ import {
     LoginFailure,
 } from '../actions/loginActions';
 import sendLoginRequest from "../apis/login";
+import { logger, consoleTransport } from "react-native-logs";
+
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  severity: "debug",
+  transport: consoleTransport,
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
 
 function* sendloginreq({payload}) {
     try{
         const data = yield call(sendLoginRequest, payload);
-        console.log(data,'called');
+        log.info(data,'called');
         yield put( LoginSuccess(data));
     } catch (err) {
-        console.log(err,'login error');
+        log.error(err,'login error');
 
         yield put(LoginFailure(err));
     }

@@ -1,5 +1,5 @@
 import sendImageReducer from './sendImageReducer';
-describe("test download pdf",()=>{
+describe("test sending image",()=>{
    it("check for send image request",()=>{
        const action={
            "type":"SEND_IMAGES",

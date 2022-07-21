@@ -8,6 +8,25 @@ import {
   Pushnotificationforeground,
 } from './src/alarm/common/pushNotificationConfig';
 
+import { logger } from "react-native-logs";
+
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
+
 PushNotification.configure({
   onAction: function (notification: any) {
     if (notification.action === 'Open app to mark') {
@@ -48,7 +67,7 @@ messaging()
   .getInitialNotification()
   .then(mssg => {
     if (mssg) {
-      console.log("hi");
+      log.info("hi");
     }
   });
 

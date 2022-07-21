@@ -5,14 +5,35 @@ import {
   fetchCaretakerssuccess,
 } from '../actions/caretakerActions';
 import fetchcaretaker from '../apis/getCaretaker';
+import { logger, consoleTransport } from "react-native-logs";
+
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  severity: "debug",
+  transport: consoleTransport,
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
+
 
 function* getcaretaker({payload}) {
   try {
     const data = yield call(fetchcaretaker, payload);
-    console.log(data, 'called');
+    log.info(data, 'called');
     yield put(fetchCaretakerssuccess(data));
   } catch (err) {
-    console.log(err, 'sagg');
+    log.error(err, 'sagg');
 
     yield put(fetchCaretakerserror(err));
   }

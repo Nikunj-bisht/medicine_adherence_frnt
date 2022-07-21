@@ -1,33 +1,58 @@
 import careTakerReducer from './careTakerReducer';
-describe("test caretaker request",()=>{
-   it("should check for request",()=>{
-       const action={
-           "type":"GET_CARETAKERS",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = careTakerReducer (undefined, action);
-   });
-   it("should check for request success",()=>{
-       const action={
-           "type":"Success_CareTAKER_REQUEST",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = careTakerReducer (undefined, action);
-   });
-   it("should check for request error",()=>{
-       const action={
-           "type":"Failed_CareTAKER_REQUEST",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = careTakerReducer (undefined, action);
-   });
-})
+import Types from '../actions/allTypes';
+const initialState = {
+  data: null,
+  loading: false,
+  error: null,
+};
+describe('test careTakerReducer', () => {
+  it('should return the initial state', () => {
+      const initialState1 = {
+        data: null,
+        loading: false,
+        error: null,
+      };
+      const result = careTakerReducer(undefined, {});
+      expect(result).toEqual(initialState1);
+  });
+  const initialState = {
+    data: null,
+    loading: false,
+    error: null,
+  };
+  it('should check for authentication load', () => {
+      expect(
+        careTakerReducer(initialState, {
+              type: Types.GET_CARETAKERS,
+          }),
+      ).toEqual({
+        data: null,
+        loading: true,
+        error: null,
+      });
+  });
+  it('should check for authentication success', () => {
+      expect(
+        careTakerReducer(initialState, {
+              type: Types.Success_CareTAKER_REQUEST,
+              payload: { status: 'success' },
+          }),
+      ).toEqual({
+        data: undefined,
+        loading: false,
+        error: null,
+      });
+  });
+  it('should check for authentication error', () => {
+      expect(
+          careTakerReducer(initialState, {
+              type: Types.Failed_CareTAKER_REQUEST,
+              payload: 'ERROR',
+          }),
+      ).toEqual({
+        data: null,
+        loading: true,
+        error: undefined,
+      });
+  });
+});

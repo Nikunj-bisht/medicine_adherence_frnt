@@ -1,24 +1,25 @@
 import Types from './allTypes';
-import { logger, consoleTransport } from "react-native-logs";
+import Logger from '../../logger';
+// import { logger, consoleTransport } from "react-native-logs";
 
-const defaultConfig = {
-  levels: {
-    debug: 0,
-    info: 1,
-    warn: 2,
-    error: 3,
-  },
-  severity: "debug",
-  transport: consoleTransport,
-  transportOptions: {
-    colors: {
-      info: "blueBright",
-      warn: "yellowBright",
-      error: "redBright",
-    },
-  }
-};
-const log = logger.createLogger(defaultConfig);
+// const defaultConfig = {
+//   levels: {
+//     debug: 0,
+//     info: 1,
+//     warn: 2,
+//     error: 3,
+//   },
+//   severity: "debug",
+//   transport: consoleTransport,
+//   transportOptions: {
+//     colors: {
+//       info: "blueBright",
+//       warn: "yellowBright",
+//       error: "redBright",
+//     },
+//   }
+// };
+// const log = logger.createLogger(defaultConfig);
 
 export function fetchAcceptRequest(c_id: string) {
   return {
@@ -27,14 +28,14 @@ export function fetchAcceptRequest(c_id: string) {
   };
 }
 export function fetchAcceptRequestSuccess(data) {
-  log.info(data,'success');
+  Logger.loggerInfo('accept request success');
   return {
     type: Types.SUCCESS_ACCEPT_REQUEST,
     payload: data,
   };
 }
 export function fetchAcceptRequestError(error) {
-  log.error(error, 'ac');
+  Logger.loggerError('error');
   return {
     type: Types.FAILED_ACCEPT_REQUEST,
     payload: error,

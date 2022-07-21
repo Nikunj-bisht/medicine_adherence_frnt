@@ -1,24 +1,20 @@
-import Types from '../actions/allTypes';
+import Types from "../actions/allTypes";
 
-let initialState = {
-  load: true,
-  myPatientList: [],
+const initialState = {
+  data: null,
+  loading: false,
+  error: null,
 };
-
-const myPatientsReducer = (state = initialState, {type, payload}) => {     //NO SONAR
-  switch (type) {
-    case Types.SUCCESS_GET_PATIENTS :
-      return {
-        load: false,
-        myPatientList: payload.myPatientListList,
-      };
+const myPatientsReducer = (state = initialState, action) => {   //NO SONAR
+  switch (action.type) {
+    case Types.GET_PATIENTS:
+      return {data: null, loading: true, error: null};
+    case Types.SUCCESS_GET_PATIENTS:
+      return {data: action.data, loading: false, error: null};
     case Types.FAILED_TO_GET_PATIENTS:
-      return {
-        ...state,
-        myPatientList: [],
-      };
+      return {data: null, loading: true, error: action.data};
     default:
-      return state;
+      return initialState;
   }
 };
 

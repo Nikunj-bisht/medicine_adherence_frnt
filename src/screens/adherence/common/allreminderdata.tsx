@@ -5,7 +5,7 @@ const db = globalDb();
 const Allreminderdata = async (med_name: any) => {
   let reminder_obj: any;
   let map = new Map();
-  let med_id: Number = 0;
+  let med_id: number = 0;
 
   function reminder_promise() {
     return new Promise(resolve => {

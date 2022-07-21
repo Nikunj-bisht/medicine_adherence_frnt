@@ -1,4 +1,3 @@
-import { fetchPatients } from '../actions/myPatientsActions';
 import axios from './axiosDeclaration';
 
 async function myPatients(payload) {
@@ -8,4 +7,4 @@ async function myPatients(payload) {
   return response.data;
 }
 
-export default fetchPatients;
+export default myPatients;

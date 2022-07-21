@@ -1,9 +1,9 @@
 import Types from '../actions/allTypes';
 
 let initialState={
-  data: {},
+  data: null,
   load:true,
-  error: '',
+  error: null,
 };
 
 const saveUserReducer = (state = initialState, action) => {

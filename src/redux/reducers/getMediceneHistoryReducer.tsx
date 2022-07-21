@@ -1,24 +1,20 @@
-import Types from '../actions/allTypes';
+import Types from "../actions/allTypes";
 
-let initialState = {
-  load: true,
-  userMediceneList: [],
+const initialState = {
+  data: null,
+  loading: false,
+  error: null,
 };
-
-const getMediceneHistoryReducer = (state = initialState, {type, payload}) => {    
-  switch (type) {
+const getMediceneHistoryReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Types.GET_MEDICENE_HISTORY:
+      return {...state, loading: true};
     case Types.SUCCESS_MEDICINE_HISTORY:
-      return {
-        load: false,
-        userMediceneList: payload.userMediceneList,
-      };
+      return {data: action.data, loading: false, error: null};
     case Types.FAILED_MEDICINE_HISTORY:
-      return {
-        ...state,
-        userMediceneList: [],
-      };
+      return {data: null, loading: true, error: action.data};
     default:
-      return state;
+      return initialState;
   }
 };
 

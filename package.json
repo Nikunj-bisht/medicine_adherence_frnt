@@ -102,6 +102,6 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["./path/to/jestSetupFile.js"]
+    "setupFiles": ["./jestsetup.js"]
   }
 }

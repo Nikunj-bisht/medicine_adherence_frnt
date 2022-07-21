@@ -1,5 +1,5 @@
 import saveUserReducer from './saveUserReducer';
-describe("test download pdf",()=>{
+describe("save user test",()=>{
    it("check for save user details",()=>{
        const action={
            "type":"POST_SAVE_USER",

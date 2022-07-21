@@ -11,7 +11,6 @@ import styles from '../patientStyles/patientRequestStyles';
 import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import { fetchAcceptRequest } from '../../../redux/actions/acceptRequestActions';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Patientrequest = () => {
   const [patients, patientsdata] = React.useState([]);

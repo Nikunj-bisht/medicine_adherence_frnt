@@ -1,5 +1,4 @@
 import Types from "../actions/allTypes";
-import axios from "../apis/axiosDeclaration";
 
 let initialState={
   data: {},

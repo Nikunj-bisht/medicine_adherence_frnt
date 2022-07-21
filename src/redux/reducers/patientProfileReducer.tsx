@@ -1,12 +1,12 @@
 import Types from "../actions/allTypes";
 
 let initialState={
-    data: {},
-    load:true,
-    error: '',
+  data: null,
+  loading: false,
+  error: null,
 };
 
-const patientProfileReducer = (state = initialState, action) => {
+const patientProfileReducer = (state = initialState, action:any) => {
   switch (action.type) {
     case Types.GET_PROFILE:
       return {...state, loading: true};

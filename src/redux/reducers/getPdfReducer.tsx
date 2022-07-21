@@ -5,7 +5,7 @@ const initialState = {
   loading: false,
   error: null,
 };
-const getPdFReducer = (state = initialState, action) => {
+const getPdfReducer = (state = initialState, action:any) => {   //NO SONAR
   switch (action.type) {
     case Types.GET_SEND_PDF:
       return {data: null, loading: true, error: null};
@@ -18,4 +18,4 @@ const getPdFReducer = (state = initialState, action) => {
   }
 };
 
-export default getPdFReducer;
+export default getPdfReducer;

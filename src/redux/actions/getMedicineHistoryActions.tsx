@@ -1,4 +1,22 @@
 import Types from "./allTypes";
+import { logger } from "react-native-logs";
+
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
 
 export function getMedicineHistoryRequest(med_id: string) {
     return {
@@ -7,14 +25,14 @@ export function getMedicineHistoryRequest(med_id: string) {
     };
 }
 export function getMedicineHistoryRequestSuccess(data) {
-    console.log(data, 'success');
+    log.info(data, 'success');
     return {
     type: Types.SUCCESS_MEDICINE_HISTORY,
     payload:data,
 };
 }
 export function getMedicineHistoryRequestFailure(error) {
-    console.log(error, 'ac');
+    log.error(error, 'ac');
     return{
         type: Types.FAILED_MEDICINE_HISTORY,
         payload:error,

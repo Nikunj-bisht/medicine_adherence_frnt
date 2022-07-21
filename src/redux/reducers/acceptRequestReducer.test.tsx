@@ -1,33 +1,59 @@
 import acceptRequestReducer from './acceptRequestReducer';
-describe("test download pdf",()=>{
-   it("should check for request",()=>{
-       const action={
-           "type":"PUT_ACCEPT_REQUEST",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = acceptRequestReducer(undefined, action);
-   });
-   it("should check for request success",()=>{
-       const action={
-           "type":"SUCCESS_ACCEPT_REQUEST",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = acceptRequestReducer(undefined, action);
-   });
-   it("should check for request error",()=>{
-       const action={
-           "type":"FAILED_ACCEPT_REQUESR",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = acceptRequestReducer(undefined, action);
-   });
-})
+import Types from '../actions/allTypes';
+const initialState = {
+  data: null,
+  loading: false,
+  error: null,
+};
+describe('test AcceptRequestReducer', () => {
+  it('should return the initial state', () => {
+      const initialState1 = {
+        data: null,
+        loading: false ,
+        error:null ,
+      };
+      const result = acceptRequestReducer(undefined, {});
+      expect(result).toEqual(initialState1);
+  });
+  const initialState = {
+    data: null,
+    loading: false,
+    error: null,
+  };
+  it('should check for authentication load', () => {
+      expect(
+        acceptRequestReducer(initialState, {
+              type: Types.PUT_ACCEPT_REQUEST,
+          }),
+      ).toEqual({
+        data: null,
+        loading: true,
+        error: null,
+      });
+  });
+  it('should check for authentication success', () => {
+      expect(
+        acceptRequestReducer(initialState, {
+              type: Types.SUCCESS_ACCEPT_REQUEST,
+              payload: { status: 'success' },
+          }),
+      ).toEqual({
+        data: undefined,
+        loading: false,
+        error: null,
+      });
+  });
+  it('should check for authentication error', () => {
+      expect(
+        acceptRequestReducer(initialState, {
+              type: Types.FAILED_ACCEPT_REQUEST,
+              payload: 'ERROR',
+          }),
+      ).toEqual({
+        data: null,
+        loading: true,
+        error: undefined,
+      });
+  });
+});
+

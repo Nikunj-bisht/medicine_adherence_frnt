@@ -5,14 +5,34 @@ import {
   deletePatientRequestFailure,
 } from '../actions/deletePatientRequestActions';
 import fetchDeleteRequest from '../apis/deleteRequest';
+import { logger, consoleTransport } from "react-native-logs";
+
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  severity: "debug",
+  transport: consoleTransport,
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
 
 function* deleterequest({payload}) {
   try {
     const data = yield call(fetchDeleteRequest, payload);
-    console.log(data, 'called');
+    log.info(data, 'called');
     yield put(deletePatientRequestSuccess(data));
   } catch (err) {
-    console.log(err, 'sagg');
+    log.error(err, 'sagg');
 
     yield put(deletePatientRequestFailure(err));
   }

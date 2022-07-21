@@ -1,9 +1,9 @@
 import Types from "../actions/allTypes";
 
 const initialState = {
-  data: {},
+  data: null,
   loading: false,
-  error: '',
+  error: null,
 };
 const acceptRequestReducer = (state = initialState, action) => {
   switch (action.type) {

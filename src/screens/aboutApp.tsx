@@ -12,7 +12,7 @@ const About = () => {
         />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.text}>
+        <Text style={styles.text} testID='aboutText'>
           Medicine Adherence app which allows user to use medicine, reminder,
           caretaker, patient, report and more features and never skip their
           medications.

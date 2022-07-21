@@ -4,15 +4,35 @@ import {
   fetchPatientsuccess,
   fetchPatienterror,
 } from '../actions/myPatientsActions';
-import { fetchPatients } from '../actions/myPatientsActions';
+import { myPatients } from '../apis/patientRequest'
+import { logger, consoleTransport } from "react-native-logs";
+
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  severity: "debug",
+  transport: consoleTransport,
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
 
 function* getpatient({payload}) {
   try {
-    const data = yield call(fetchPatients, payload);
-    console.log(data, 'called');
+    const data = yield call(myPatients, payload);
+    log.info(data, 'called');
     yield put(fetchPatientsuccess(data));
   } catch (err) {
-    console.log(err, 'sagg');
+    log.error(err, 'sagg');
 
     yield put(fetchPatienterror(err));
   }

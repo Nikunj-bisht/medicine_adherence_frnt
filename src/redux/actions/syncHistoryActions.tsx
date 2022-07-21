@@ -1,5 +1,22 @@
 import Types from './allTypes';
+import { logger } from "react-native-logs";
 
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  transportOptions: {
+    colors: {
+      info: "blueBright",
+      warn: "yellowBright",
+      error: "redBright",
+    },
+  }
+};
+const log = logger.createLogger(defaultConfig);
 export function putSyncHistory(med_id: string) {
   return {
     type: Types.POST_SYNC_HISTORY,
@@ -7,14 +24,14 @@ export function putSyncHistory(med_id: string) {
   };
 }
 export function putSyncHistorysuccess(data) {
-  console.log(data, 'success');
+  log.info(data, 'success');
   return {
     type: Types.SUCCESS_SYNC_HISTORY,
     payload: data,
   };
 }
 export function putSyncHistoryerror(error) {
-  console.log(error, 'ac');
+  log.error(error, 'ac');
   return {
     type: Types.FAILED_SYNC_HISTORY,
     payload: error,

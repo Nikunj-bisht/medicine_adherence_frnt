@@ -10,7 +10,7 @@ describe('Profile', () => {
   it('should find the button via testId', () => {
     const testIdName = 'savebutton';
  
-    const {getByTestId} = render(<Profile />);
+    const {getByTestId} = render(<Profile navigation={undefined}/>);
  
     const foundButton = getByTestId(testIdName);
  

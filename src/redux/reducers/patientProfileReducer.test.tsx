@@ -1,33 +1,53 @@
-import patientProfileReducer from'./patientProfileReducer';
-describe("test download pdf",()=>{
-   it("should check for download pdf request",()=>{
-       const action={
-           "type":"GET_PROFILE",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = patientProfileReducer(undefined, action);
-   });
-   it("should check for history syncing",()=>{
-       const action={
-           "type":"SUCCESS_GET_PROFILE",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = patientProfileReducer(undefined, action);
-   });
-   it("should check for history syncing",()=>{
-       const action={
-           "type":"FAILED_GET_PROFILE",
-           "payload":"[]",
-       }
-       const expectedState = {
-           data: action.payload
-       }
-       const result = patientProfileReducer(undefined, action);
-   });
-})
+import patientProfileReducer from './patientProfileReducer';
+import Types from '../actions/allTypes';
+const initialState = {
+  data: null,
+  loading: false,
+  error: null,
+};
+describe('test patientProfileReducer', () => {
+  it('should return the initial state', () => {
+      const initialState1 = {
+        data: null,
+        loading: false,
+        error: null,
+      };
+      const result = patientProfileReducer(undefined, {});
+      expect(result).toEqual(initialState1);
+  });
+  it('should check for authentication load', () => {
+      expect(
+        patientProfileReducer(initialState, {
+              type: Types.GET_PROFILE,
+          }),
+      ).toEqual({
+        data: null,
+        loading: true,
+        error: null,
+      });
+  });
+  it('should check for authentication success', () => {
+      expect(
+        patientProfileReducer(initialState, {
+              type: Types.SUCCESS_GET_PROFILE,
+              payload: { status: 'success' },
+          }),
+      ).toEqual({
+        data: undefined,
+        loading: false,
+        error: null,
+      });
+  });
+  it('should check for authentication error', () => {
+      expect(
+        patientProfileReducer(initialState, {
+              type: Types.FAILED_GET_PROFILE,
+              payload: 'ERROR',
+          }),
+      ).toEqual({
+        data: null,
+        loading: true,
+        error: undefined,
+      });
+  });
+});
