@@ -5,7 +5,7 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faImage} from '@fortawesome/free-solid-svg-icons';
-import styles from '../adherenceStyles/medicineHistoryListStyles';
+import styles from '../../screens/adherence/adherenceStyles/medicineHistoryListStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const MedicinehistoryList = props => {
   const {item, showimgfun, medName} = props;

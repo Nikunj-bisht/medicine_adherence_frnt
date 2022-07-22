@@ -12,7 +12,7 @@ import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {day_data} from '../common/timeData';
+import {day_data} from '../../components/alarm/timeData';
 import PushNotification, {Importance} from 'react-native-push-notification';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {

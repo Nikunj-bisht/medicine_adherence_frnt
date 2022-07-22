@@ -4,7 +4,7 @@ import SQLite from 'react-native-sqlite-storage';
 let weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 import Toast from 'react-native-toast-message';
 import styles from '../adherenceStyles/todayPerformanceStyles';
-import {Box} from '../organisms/medicineTime';
+import {Box} from '../../../components/organisms/medicineTime';
 
 let cc = 0;
 

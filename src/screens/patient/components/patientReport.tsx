@@ -16,10 +16,10 @@ import {Card} from 'react-native-paper';
 import {useFocusEffect} from '@react-navigation/native';
 import NetworkCalls from '../../../connectivity/NetworkCalls';
 import * as Animatable from 'react-native-animatable';
-import Downloadpdf from '../../adherence/common/downloadPdf';
+import Downloadpdf from '../../../components/adherence/downloadPdf';
 import LottieView from 'lottie-react-native';
 import HistoryDetail from '../../components/historyDetail';
-import AdherencePercentage from '../../adherence/common/adherencePercentage';
+import AdherencePercentage from '../../../components/adherence/adherencePercentage';
 import styles from '../patientStyles/patientReportStyles';
 
 let detailData = {};

@@ -6,7 +6,7 @@ import {name as appName} from './app.json';
 import {
   PlaySound,
   Pushnotificationforeground,
-} from './src/alarm/common/pushNotificationConfig';
+} from './src/components/alarm/pushNotificationConfig';
 
 import { logger } from "react-native-logs";
 

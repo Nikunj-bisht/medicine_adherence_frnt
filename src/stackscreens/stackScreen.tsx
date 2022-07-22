@@ -19,7 +19,7 @@ import MedicineImages from '../screens/patient/components/medicineImages';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import ViewProfile from '../screens/patient/components/patientProfile';
 import PatientReport from '../screens/patient/components/patientReport';
-import DrawerNavigator from '../components/drawerNavigator';
+import DrawerNavigator from '../navigation/drawerNavigator';
 import UserMed from '../screens/userMed';
 
 const Stack = createStackNavigator();

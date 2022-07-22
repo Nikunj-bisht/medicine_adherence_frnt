@@ -12,7 +12,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Button} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
 import {Alert, View} from 'react-native';
-import {Signout} from '../screens/caretaker/common/allIcons';
+import {Signout} from '../components/caretaker/allIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './componentStyles/componentStyles';
 

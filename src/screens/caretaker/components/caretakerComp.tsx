@@ -8,7 +8,7 @@ import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {useFocusEffect} from '@react-navigation/native';
 import {Alert} from 'react-native';
 import {Tab, TabView} from 'react-native-elements';
-import {Caretaker_nurse, Userfriend} from '../common/allIcons';
+import {Caretaker_nurse, Userfriend} from '../../../components/caretaker/allIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../CaretakerStyles/caretakerComStyles';
 

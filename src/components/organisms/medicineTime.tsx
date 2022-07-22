@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Text, View} from 'react-native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
-import styles from '../adherenceStyles/todayPerformanceStyles';
+import styles from '../../screens/adherence/adherenceStyles/todayPerformanceStyles';
 
 export const Box = (props: any) => {
   const {time, updatetimes} = props;

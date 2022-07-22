@@ -1,4 +1,4 @@
-import { API_URL } from '../../../repositories/var';
+import { API_URL } from '../../repositories/var';
 import RNFetchBlob from 'rn-fetch-blob';
 
 const {config} = RNFetchBlob;

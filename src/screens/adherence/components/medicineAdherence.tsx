@@ -23,7 +23,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import * as Animatable from 'react-native-animatable';
 import globalDb from '../../../repositories/database/globalDb';
-import AdherencePercentage from '../common/adherencePercentage';
+import AdherencePercentage from '../../../components/adherence/adherencePercentage';
 let today = new Date();
 const Medicineadherence = ({navigation}) => {
   const [reminderdata, reminderdatastate] = React.useState([]);

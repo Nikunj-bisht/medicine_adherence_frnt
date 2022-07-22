@@ -1,5 +1,5 @@
 /* eslint-disable radix */
-import globalDb from '../../../repositories/database/globalDb';
+import globalDb from '../../repositories/database/globalDb';
 
 const db = globalDb();
 const Allreminderdata = async (med_name: any) => {
