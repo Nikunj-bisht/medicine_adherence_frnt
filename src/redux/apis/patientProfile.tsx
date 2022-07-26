@@ -1,11 +1,8 @@
-import { patientProfileReducer } from '../reducers/patientProfileReducer';
 import axios from './axiosDeclaration';
-
-async function fetchprofile(payload) {
- console.log('payload',payload);
- const response = await axios.get(`/api/v1/user-details?userId =${payload}`);
- console.log(response + ' Saga ');
- return response.data;
+import { API_URLS } from '../../constants/apiurl';
+export const patient = {
+  patientProfile: async function fetchpatientdetail(payload) {
+    const response = await axios.get(`${API_URLS.PATIENT_PROFILE}?userId=${payload}`);
+    return response.data;
+  },
 }
-
-export default patientProfileReducer;

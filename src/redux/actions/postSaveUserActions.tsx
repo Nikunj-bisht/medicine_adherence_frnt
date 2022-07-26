@@ -1,4 +1,4 @@
-import Types from './allTypes';
+import Types from './adherence/allTypes';
 import { logger } from "react-native-logs";
 
 const defaultConfig = {

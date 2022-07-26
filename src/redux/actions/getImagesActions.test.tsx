@@ -1,5 +1,5 @@
 import {getImagesActions} from '../actions/getImagesActions';
-import Types from "../actions/allTypes";
+import Types from "./adherence/allTypes";
 describe("test CaretakerActions",()=>{
     const data = "1"
     const err = "SomeError"

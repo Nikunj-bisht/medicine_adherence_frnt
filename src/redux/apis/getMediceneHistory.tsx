@@ -1,10 +1,17 @@
 import axios from './axiosDeclaration';
+import { API_URLS } from '../../constants/apiurl';
 
-async function fetchmedicenehistory(payload) {
-  console.log('payload', payload);
-  const response = await axios.get(`/api/v1/medicine-histories?medId=${payload}`);
-  console.log(response + ' Saga ');
-  return response.data;
+
+interface Iparams {
+  meds_id: any;
+  syncData: any;
 }
 
-export default fetchmedicenehistory;
+const adherence = {
+  getmedhistory: async function getMedHistory(payload) {
+    const response = await axios.get(`${API_URLS.GET_MED_HISTORY}?medId=${payload}`);
+    return response.data;
+  }
+
+};
+export default adherence;

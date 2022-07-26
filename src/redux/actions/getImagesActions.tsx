@@ -1,4 +1,4 @@
-import Types from './allTypes';
+import Types from './adherence/allTypes';
 
 export function getImageRequest(medId: number) {
   return {

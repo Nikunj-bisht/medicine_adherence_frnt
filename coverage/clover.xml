@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1658472965711" clover="3.2.0">
-  <project timestamp="1658472965711" name="All files">
-    <metrics statements="313" coveredstatements="233" conditionals="94" coveredconditionals="63" methods="93" coveredmethods="73" elements="500" coveredelements="369" complexity="0" loc="313" ncloc="313" packages="13" files="48" classes="48"/>
+<coverage generated="1658812180013" clover="3.2.0">
+  <project timestamp="1658812180014" name="All files">
+    <metrics statements="537" coveredstatements="401" conditionals="114" coveredconditionals="86" methods="173" coveredmethods="125" elements="824" coveredelements="612" complexity="0" loc="537" ncloc="537" packages="30" files="86" classes="86"/>
     <package name="assests">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Medstick_1.png" path="/home/nineleaps/medicine_adherence_frnt/assests/Medstick_1.png">
@@ -13,12 +13,12 @@
       <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="logger.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/logger.tsx">
         <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.organisms">
@@ -39,72 +39,12 @@
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="apiurl.ts" path="/home/nineleaps/medicine_adherence_frnt/src/constants/apiurl.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="16" type="stmt"/>
       </file>
     </package>
     <package name="src.redux.actions">
-      <metrics statements="107" coveredstatements="107" conditionals="0" coveredconditionals="0" methods="51" coveredmethods="51"/>
-      <file name="acceptRequestActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/acceptRequestActions.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-      </file>
-      <file name="allTypes.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/allTypes.tsx">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="33" type="stmt"/>
-      </file>
-      <file name="caretakerActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/caretakerActions.tsx">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-      </file>
-      <file name="deletePatientRequestActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/deletePatientRequestActions.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-      </file>
+      <metrics statements="28" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="15"/>
       <file name="getImagesActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/getImagesActions.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-      </file>
-      <file name="getMedicineHistoryActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/getMedicineHistoryActions.tsx">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-      </file>
-      <file name="getPatientRequestActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/getPatientRequestActions.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-      </file>
-      <file name="getPdfActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/getPdfActions.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="4" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -118,24 +58,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
       </file>
-      <file name="loginActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/loginActions.tsx">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-      </file>
       <file name="myPatientsActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/myPatientsActions.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-      </file>
-      <file name="patientProfileActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patientProfileActions.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="4" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
@@ -164,15 +87,184 @@
         <line num="36" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
       </file>
-      <file name="sendImagesAction.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/sendImagesAction.tsx">
+    </package>
+    <package name="src.redux.actions.adherence">
+      <metrics statements="37" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="15"/>
+      <file name="allTypes.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/adherence/allTypes.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="59" type="stmt"/>
+      </file>
+      <file name="getMedicineHistoryActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/adherence/getMedicineHistoryActions.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="getPdfActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/adherence/getPdfActions.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="medImagesActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/adherence/medImagesActions.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+      </file>
+      <file name="syncDataActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/adherence/syncDataActions.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="syncHistoryActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/adherence/syncHistoryActions.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.actions.caretaker">
+      <metrics statements="27" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
+      <file name="caretakerActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/caretaker/caretakerActions.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="emailCaretakerActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/caretaker/emailCaretakerActions.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+      </file>
+      <file name="reqCaretakerActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/caretaker/reqCaretakerActions.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+      </file>
+      <file name="sendImagesAction.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/caretaker/sendImagesAction.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="3" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.actions.login">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="loginActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/login/loginActions.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.actions.patient">
+      <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="18"/>
+      <file name="acceptRequestActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patient/acceptRequestActions.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="deletePatientRequestActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patient/deletePatientRequestActions.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+      <file name="getPatientRequestActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patient/getPatientRequestActions.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+      <file name="notifyPatientActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patient/notifyPatientActions.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="patientActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patient/patientActions.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="patientProfileActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/patient/patientProfileActions.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.actions.profile">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="patientProfileActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/profile/patientProfileActions.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
-      <file name="signupActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/signupActions.tsx">
+    </package>
+    <package name="src.redux.actions.signup">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="signupActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/signup/signupActions.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="7" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
@@ -183,92 +275,124 @@
         <line num="39" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
       </file>
-      <file name="syncDataActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/syncDataActions.tsx">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
+    </package>
+    <package name="src.redux.apis">
+      <metrics statements="72" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="28" coveredmethods="0"/>
+      <file name="acceptRequest.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/acceptRequest.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
       </file>
-      <file name="syncHistoryActions.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/actions/syncHistoryActions.tsx">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
+      <file name="adherence.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/adherence.tsx">
+        <metrics statements="12" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+      <file name="axiosDeclaration.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/axiosDeclaration.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="14" type="stmt"/>
+      </file>
+      <file name="careTaker.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/careTaker.tsx">
+        <metrics statements="7" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="deleteRequest.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/deleteRequest.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="getCaretaker.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/getCaretaker.tsx">
+        <metrics statements="9" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="getMediceneHistory.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/getMediceneHistory.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="getPdfRequest.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/getPdfRequest.tsx">
+        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="patient.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/patient.tsx">
+        <metrics statements="9" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="patientRequest.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/patientRequest.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="sendImages.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/sendImages.tsx">
+        <metrics statements="9" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="syncData.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/syncData.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="syncHistory.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/apis/syncHistory.tsx">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.redux.reducers">
-      <metrics statements="105" coveredstatements="93" conditionals="76" coveredconditionals="63" methods="15" coveredmethods="15"/>
-      <file name="acceptRequestReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/acceptRequestReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-      </file>
-      <file name="careTakerReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/careTakerReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-      </file>
-      <file name="deleteRequestReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/deleteRequestReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-      </file>
+      <metrics statements="21" coveredstatements="17" conditionals="16" coveredconditionals="11" methods="3" coveredmethods="3"/>
       <file name="getImagesReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/getImagesReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-      </file>
-      <file name="getMediceneHistoryReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/getMediceneHistoryReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-      </file>
-      <file name="getPdfReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/getPdfReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-      </file>
-      <file name="loginReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/loginReducer.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -288,16 +412,6 @@
         <line num="15" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="patientProfileReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patientProfileReducer.tsx">
-        <metrics statements="7" coveredstatements="5" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="4" type="cond" truecount="2" falsecount="2"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-      </file>
       <file name="patientRequestReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patientRequestReducer.tsx">
         <metrics statements="7" coveredstatements="4" conditionals="6" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
@@ -308,37 +422,10 @@
         <line num="16" count="0" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
       </file>
-      <file name="saveUserReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/saveUserReducer.tsx">
-        <metrics statements="7" coveredstatements="4" conditionals="5" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="3" type="cond" truecount="1" falsecount="3"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-      </file>
-      <file name="sendImageReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/sendImageReducer.tsx">
-        <metrics statements="7" coveredstatements="4" conditionals="5" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="3" type="cond" truecount="1" falsecount="3"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-      </file>
-      <file name="singupReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/singupReducer.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-      </file>
-      <file name="syncDataReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/syncDataReducer.tsx">
+    </package>
+    <package name="src.redux.reducers.adherence">
+      <metrics statements="35" coveredstatements="35" conditionals="25" coveredconditionals="25" methods="5" coveredmethods="5"/>
+      <file name="getMediceneHistoryReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/adherence/getMediceneHistoryReducer.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -348,7 +435,37 @@
         <line num="15" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="syncHistoryReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/syncHistoryReducer.tsx">
+      <file name="getPdfReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/adherence/getPdfReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="medImagesReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/adherence/medImagesReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="syncDataReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/adherence/syncDataReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="syncHistoryReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/adherence/syncHistoryReducer.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -359,23 +476,295 @@
         <line num="18" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="src.redux.reducers.caretaker">
+      <metrics statements="21" coveredstatements="18" conditionals="15" coveredconditionals="12" methods="3" coveredmethods="3"/>
+      <file name="careTakerReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/caretaker/careTakerReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="emailCaretakerReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/caretaker/emailCaretakerReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="sendImageReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/caretaker/sendImageReducer.tsx">
+        <metrics statements="7" coveredstatements="4" conditionals="5" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="3"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.reducers.login">
+      <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <file name="loginReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/login/loginReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.reducers.patient">
+      <metrics statements="35" coveredstatements="35" conditionals="25" coveredconditionals="25" methods="5" coveredmethods="5"/>
+      <file name="acceptRequestReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patient/acceptRequestReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="deleteRequestReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patient/deleteRequestReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="notifyPatientReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patient/notifyPatientReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="patientProfileReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patient/patientProfileReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="patientReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/patient/patientReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.reducers.profile">
+      <metrics statements="7" coveredstatements="5" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <file name="patientProfileReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/profile/patientProfileReducer.tsx">
+        <metrics statements="7" coveredstatements="5" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="2"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.reducers.signup">
+      <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <file name="singupReducer.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/reducers/signup/singupReducer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="src.redux.sagas">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="loginSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/loginSaga.tsx">
+      <file name="patientRequestSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/patientRequestSaga.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="51" count="2" type="stmt"/>
-        <line num="52" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.sagas.adherence">
+      <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+      <file name="getPdfSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/adherence/getPdfSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="medImagesSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/adherence/medImagesSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="mediceneHistorySaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/adherence/mediceneHistorySaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="syncDataSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/adherence/syncDataSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="syncHistorySaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/adherence/syncHistorySaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.sagas.caretaker">
+      <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <file name="caretakerSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/caretaker/caretakerSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="emailCaretakerSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/caretaker/emailCaretakerSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+      <file name="reqCaretakerSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/caretaker/reqCaretakerSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="sendImageSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/caretaker/sendImageSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.sagas.login">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="loginSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/login/loginSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.sagas.patient">
+      <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+      <file name="acceptRequestSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/patient/acceptRequestSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="deleteRequestSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/patient/deleteRequestSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="notifyPatientSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/patient/notifyPatientSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="patientProfileSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/patient/patientProfileSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="patientSaga.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/redux/sagas/patient/patientSaga.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="var.tsx" path="/home/nineleaps/medicine_adherence_frnt/src/repositories/var.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="1" count="16" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories.signup">

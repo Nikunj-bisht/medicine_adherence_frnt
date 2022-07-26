@@ -1,5 +1,5 @@
 import { postSaveUserActions } from '../actions/postSaveUserActions';
-import Types from "../actions/allTypes";
+import Types from "./adherence/allTypes";
 describe("test postSaveUserActions",()=>{
     const data = "1"
     const err = "SomeError"

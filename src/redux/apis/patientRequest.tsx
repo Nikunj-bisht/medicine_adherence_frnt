@@ -1,9 +1,8 @@
-import axios from "./axiosDeclaration";
-
-async function fetchpatientrequests(payload){
-    console.log('payload',payload);
-    const response = await axios.get('/api/v1/patient/requests?caretakerId=d0aba7ce-1e7f-458e-8090-8cc62c00c3c5');
-    console.log(response + 'Saga');
+import axios from './axiosDeclaration';
+import { API_URLS } from '../../constants/apiurl';
+export const patient = {
+  patientReq: async function fetchpatientreq(payload) {
+    const response = await axios.get(`${API_URLS.PATIENT_REQ}?userId=${payload}`);
     return response.data;
+  },
 }
- export default fetchpatientrequests;

@@ -1,4 +1,4 @@
-import Types from "../actions/allTypes";
+import Types from "../actions/adherence/allTypes";
 
 let initialState={
     data: {},

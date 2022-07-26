@@ -1,10 +1,9 @@
 import axios from './axiosDeclaration';
-
-async function fetchDeleteRequest(payload) {
-  console.log('payload', payload);
-  const response = await axios.get(`/api/v1/delete=${payload}`);
-  console.log(response + ' Saga ');
-  return response.data;
+import { API_URLS } from '../../constants/apiurl';
+export const deleteRequest = {
+  
+  reqDelete: async function fetchpatientreqdelete(payload) {
+    const response = await axios.get(`${API_URLS.REQ_DELETE}`);
+    return response.data;
+  },
 }
-
-export default fetchDeleteRequest;

@@ -1,5 +1,5 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
-import Types from '../actions/allTypes';
+import Types from '../actions/adherence/allTypes';
 import {
     postSaveUserDetailssuccess,
     postSaveUserDetailserror,

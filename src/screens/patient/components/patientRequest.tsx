@@ -10,7 +10,7 @@ import {useFocusEffect} from '@react-navigation/native';
 import styles from '../patientStyles/patientRequestStyles';
 import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAcceptRequest } from '../../../redux/actions/acceptRequestActions';
+import { fetchAcceptRequest } from '../../../redux/actions/patient/acceptRequestActions';
 
 const Patientrequest = () => {
   const [patients, patientsdata] = React.useState([]);

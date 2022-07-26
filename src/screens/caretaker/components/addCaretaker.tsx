@@ -16,7 +16,7 @@ import {Card} from 'react-native-paper';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import UserAvatar from 'react-native-user-avatar';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchCaretakers} from '../../../redux/actions/caretakerActions';
+import {fetchCaretakers} from '../../../redux/actions/caretaker/caretakerActions';
 import styles from "../CaretakerStyles/caretakerComStyles";
 
 

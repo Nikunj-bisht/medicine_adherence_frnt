@@ -1,10 +1,21 @@
 import axios from './axiosDeclaration';
+import { API_URLS } from '../../constants/apiurl';
 
-async function syncData(payload) {
-  console.log('payload', payload);
-  const response = await axios.get(`api/v1/medicines/sync=${payload}`);
-  console.log(response + ' Saga ');
-  return response.data;
+
+interface Iparams {
+  meds_id: any;
+  syncData: any;
 }
+
+const syncData = {
+
+  syncmeds: async function syncMeds(payload) {
+    const response = await axios.get(`${API_URLS.SYNC_MEDS}=${payload}`);
+    return response.data;
+  },
+ 
+
+};
+
 
 export default syncData;

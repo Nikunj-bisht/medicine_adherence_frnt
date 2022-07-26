@@ -1,5 +1,5 @@
 import myPatientsReducer from './myPatientsReducer';
-import Types from '../actions/allTypes';
+import Types from '../actions/adherence/allTypes';
 const initialState = {
   data: null,
   loading: false,
