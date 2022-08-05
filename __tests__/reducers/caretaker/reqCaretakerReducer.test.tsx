@@ -1,5 +1,5 @@
 import emailCaretakerReducer from '../../../src/redux/reducers/caretaker/emailCaretakerReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,
@@ -15,11 +15,7 @@ describe('test emailCaretakerReducer', () => {
       const result = emailCaretakerReducer(undefined, {});
       expect(result).toEqual(initialState1);
   });
-  const initialState = {
-    data: null,
-    loading: false,
-    error: null,
-  };
+
   it('should check for emailCaretaker load', () => {
       expect(
         emailCaretakerReducer(initialState, {

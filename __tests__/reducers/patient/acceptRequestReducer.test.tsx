@@ -1,5 +1,5 @@
 import acceptRequestReducer from '../../../src/redux/reducers/patient/acceptRequestReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

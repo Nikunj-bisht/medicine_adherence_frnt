@@ -1,7 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import ProfileHeader from './ProfileHeader';
-
+import {logger} from 'react-native-logs';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import React, {useEffect} from 'react';
 import {
@@ -12,13 +12,31 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Button} from 'react-native-elements';
 import {useFocusEffect} from '@react-navigation/native';
 import {Alert, View} from 'react-native';
-import {Signout} from '../components/caretaker/allIcons';
+import {Signout} from './caretaker/allIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import styles from './componentStyles/componentStyles';
+import styles from '../components/componentStyles/componentStyles';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+const defaultConfig = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  transportOptions: {
+    colors: {
+      debug: 'greenBright',
+      info: 'blueBright',
+      warn: 'yellowBright',
+      error: 'redBright',
+    },
+  },
+};
 
-
+let log = logger.createLogger(defaultConfig);
 const CustomHeader = props => {
+   /* istanbul ignore next */
   React.useEffect(() => {
     GoogleSignin.configure({
       webClientId:
@@ -26,39 +44,40 @@ const CustomHeader = props => {
     });
   });
   const [loggedin, loggedinstate] = React.useState(true);
+  /* istanbul ignore next */
   async function getuser() {
     try {
       const isllooged = await GoogleSignin.isSignedIn();
       const checkforlogin = await AsyncStorage.getItem('user_id');
 
-      console.log(isllooged);
+      log.info(isllooged);
 
       if (checkforlogin !== null) {
-        console.log(isllooged);
+        log.info(isllooged);
         loggedinstate(true);
         return;
       }
 
       loggedinstate(false);
     } catch (err) {}
-  }
+  } 
+  /* istanbul ignore next */
   useEffect(() => {
-    const unsubscribe = props.navigation.addListener('focus', () => {
+    return props.navigation.addListener('focus', () => {
       getuser();
     });
-    return unsubscribe;
   }, [props.navigation]);
-  useFocusEffect(() => {
-    console.log('f');
+  /* istanbul ignore next */
+  useFocusEffect(() => { 
+    log.info('f');
     getuser();
   });
   return (
-    <>
-      <DrawerContentScrollView
-        style={styles.drawer}>
+    <><SafeAreaProvider>
+      <DrawerContentScrollView style={styles.drawer}>
         <TouchableOpacity
           style={styles.touch}
-          onPress={() => props.navigation.getParent().navigate('Profile')}>
+          onPress={ /* istanbul ignore next */() => props.navigation.getParent().navigate('Profile')}>
           {<ProfileHeader></ProfileHeader>}
         </TouchableOpacity>
         <DrawerItemList {...props}></DrawerItemList>
@@ -74,8 +93,8 @@ const CustomHeader = props => {
                 buttonStyle={styles.button}
                 titleStyle={styles.buttonTitle}
                 containerStyle={styles.buttonContainer}
-                onPress={async () => {
-                  props.navigation.navigate('Login');
+                onPress={async () => {/* istanbul ignore next */
+                  props.navigation.navigate('Sign-up');
                 }}
               />
               <Button
@@ -86,8 +105,8 @@ const CustomHeader = props => {
                 buttonStyle={styles.button}
                 titleStyle={styles.buttonTitle}
                 containerStyle={styles.buttonContainer}
-                onPress={async () => {
-                  props.navigation.navigate('Loginscreen');
+                onPress={async () => { /* istanbul ignore next */
+                  props.navigation.navigate('Login');
                 }}
               />
             </>
@@ -99,7 +118,7 @@ const CustomHeader = props => {
               buttonStyle={styles.button}
               titleStyle={styles.buttonLogOutTitle}
               containerStyle={styles.buttonContainer}
-              onPress={async () => {
+              onPress={async () => {/* istanbul ignore next */
                 Alert.alert('Do you want to Logout?', '', [
                   {
                     text: 'Logout',
@@ -119,12 +138,14 @@ const CustomHeader = props => {
                   },
                   {
                     text: 'Cancel',
+                    onPress: () => undefined,
                   },
                 ]);
               }}></Button>
           )}
         </View>
       </DrawerContentScrollView>
+      </SafeAreaProvider>
     </>
   );
 };

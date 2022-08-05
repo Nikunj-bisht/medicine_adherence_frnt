@@ -1,10 +1,10 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
-import adherence from '../../apis/syncHistory';
+import adherences from '../../apis/adherence';
 import { syncHistoryActions } from '../../actions/adherence/syncHistoryActions';
 export function* syncHistorySaga(value) {
   const {payload} = value;
   try {
-    const response = yield call(adherence.syncmedicineHistory, payload);
+    const response = yield call(adherences.syncmedicineHistory, payload);
     yield put(syncHistoryActions.putSyncHistorysuccess(response?.data));
   } catch (err) {
     yield put(syncHistoryActions.putSyncHistoryerror(err));

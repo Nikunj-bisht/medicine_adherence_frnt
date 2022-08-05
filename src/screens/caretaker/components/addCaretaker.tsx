@@ -19,7 +19,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {fetchCaretakers} from '../../../redux/actions/caretaker/caretakerActions';
 import styles from "../CaretakerStyles/caretakerComStyles";
 
-
 interface Props {
   navigation: any;
 }
@@ -29,7 +28,7 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
   const caretakers = useSelector(
     state => state.CareTakerReducer.userCaretakerList,
   );
-  const {load} = useSelector(state => state.CareTakerReducer);
+  const load = useSelector(state => state?.CareTakerReducer);
   console.log(load, 'load');
   const [refresh, refeereshstate] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -130,5 +129,4 @@ const Addcaretaker: React.FC<{navigation}> = Props => {
     </React.Fragment>
   );
 };
-
 export default Addcaretaker;

@@ -1,5 +1,5 @@
 import loginReducer from '../../../src/redux/reducers/login/loginReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

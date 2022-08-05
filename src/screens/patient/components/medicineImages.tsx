@@ -11,6 +11,7 @@ import {
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import { API_URL } from '../../../repositories/var';
 import styles from '../patientStyles/medicineImagesStyles';
+import { useRoute } from '@react-navigation/native';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.84);
@@ -72,9 +73,9 @@ const SingleImageComponent = ({item}) => {
   );
 };
 
-const MedicineImages = ({route}) => {
+const MedicineImages = ({navigation}) => {
   const [imageData, setImageData] = useState();
-  const {medId} = route.params;
+  const medId = useRoute;
   function fetchImages() {
     fetch(`${API_URL}/api/v1/medicine-images?medId=${medId}`)
       .then(resp => resp.json())

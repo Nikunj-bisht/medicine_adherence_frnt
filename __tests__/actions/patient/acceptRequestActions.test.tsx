@@ -1,5 +1,5 @@
 import { acceptRequestActions } from "../../../src/redux/actions/patient/acceptRequestActions";
-import Types from "../../../src/redux/actions/adherence/allTypes";
+import Types from "../../../src/redux/actions/allTypes";
 describe("test AcceptRequestActions",()=>{
     const data = "1"
     const err = "SomeError"

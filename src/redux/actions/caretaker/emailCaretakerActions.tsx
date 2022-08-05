@@ -1,24 +1,6 @@
 import {logger} from 'react-native-logs';
-import Types from '../adherence/allTypes';
-
-const defaultConfig = {
-  levels: {
-    debug: 0,
-    info: 1,
-    warn: 2,
-    error: 3,
-  },
-  transportOptions: {
-    colors: {
-      debug: 'greenBright',
-      info: 'blueBright',
-      warn: 'yellowBright',
-      error: 'redBright',
-    },
-  },
-};
-
-var log = logger.createLogger(defaultConfig);
+import Logger from '../../../logger';
+import Types from '../allTypes';
 function sendEmail(email: any) {
   return {
     type: Types.SEND_EMAIL,
@@ -26,14 +8,14 @@ function sendEmail(email: any) {
   };
 }
 function sendEmailSuccess(data) {
- // log.info(data, 'success');
+  Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_SEND_EMAIL,
     payload: data,
   };
 }
 function sendEmailFailed(error) {
- // log.error(error, 'ac');
+ Logger.loggerError('error');
   return {
     type: Types.FAILED_SEND_EMAIL,
     payload: error,

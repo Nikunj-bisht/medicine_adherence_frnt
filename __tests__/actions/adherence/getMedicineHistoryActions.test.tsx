@@ -1,5 +1,5 @@
 import {getMediceneHistoryActions} from '../../../src/redux/actions/adherence/getMedicineHistoryActions';
-import Types from "../../../src/redux/actions/adherence/allTypes";
+import Types from "../../../src/redux/actions/allTypes";
 describe("test getMediceneHistoryActions",()=>{
     const data = "1"
     const err = "SomeError"

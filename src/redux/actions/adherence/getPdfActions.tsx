@@ -1,4 +1,5 @@
-import Types from './allTypes';
+import Types from '../allTypes';
+import Logger from '../../../logger';
 
 export function getPdfRequest(medId: string) {
   return {
@@ -8,12 +9,14 @@ export function getPdfRequest(medId: string) {
 }
 
 export function getPdfSuccess(data) {
+  Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_SEND_PDF,
     payload: data,
   };
 }
 export function getPdfFailure(error) {
+  Logger.loggerError('error');
   return {
     type: Types.FAILED_SEND_PDF,
     payload: error,

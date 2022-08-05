@@ -1,22 +1,5 @@
-import Types from '../adherence/allTypes';
-import { logger } from "react-native-logs";
-
-const defaultConfig = {
-  levels: {
-    debug: 0,
-    info: 1,
-    warn: 2,
-    error: 3,
-  },
-  transportOptions: {
-    colors: {
-      info: "blueBright",
-      warn: "yellowBright",
-      error: "redBright",
-    },
-  }
-};
-const log = logger.createLogger(defaultConfig);
+import Types from '../allTypes';
+import Logger from '../../../logger';
 
 export function fetchCaretakers(user_id: string) {
   return {
@@ -25,14 +8,14 @@ export function fetchCaretakers(user_id: string) {
   };
 }
 export function fetchCaretakerssuccess(data) {
-  log.info(data,'success');
+  Logger.loggerInfo('success');
   return {
     type: Types.Success_CareTAKER_REQUEST,
     payload: data,
   };
 }
 export function fetchCaretakerserror(error) {
-  log.error(error, 'ac');
+Logger.loggerError('error');
   return {
     type: Types.Failed_CareTAKER_REQUEST,
     payload: error,

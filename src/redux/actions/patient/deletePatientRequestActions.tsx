@@ -1,4 +1,5 @@
-import Types from "../adherence/allTypes";
+import Types from "../allTypes";
+import Logger from "../../../logger";
 
 export function deletePatientRequest(user_id: string) {
     return {
@@ -7,14 +8,14 @@ export function deletePatientRequest(user_id: string) {
     };
 }
 export function deletePatientRequestSuccess(data) {
-    console.log(data, 'success');
+    Logger.loggerInfo('success');
     return {
     type: Types.SUCCESS_GET_DELETE_PATIENT_REQUEST,
     payload:data,
 };
 }
 export function deletePatientRequestFailure(error) {
-    console.log(error, 'ac');
+    Logger.loggerError('error');
     return{
         type: Types.FAILED_GET_DELETE_PATIENT_REQUEST,
         payload:error,

@@ -5,16 +5,17 @@ let weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 import Toast from 'react-native-toast-message';
 import styles from '../adherenceStyles/todayPerformanceStyles';
 import {Box} from '../../../components/organisms/medicineTime';
+import { useRoute } from '@react-navigation/native';
 
 let cc = 0;
-
+SQLite.enablePromise(true);
 const TodayPerformance = ({route}) => {
   const db = SQLite.openDatabase({
     name: 'MedStickdb',
     location: 'default',
   });
 
-  const {user_id} = route.params;
+  const user_id = useRoute();
   const [Timings, setTime] = useState([]);
 
   const updatetimes = async (time: any) => {

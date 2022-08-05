@@ -1,5 +1,5 @@
 import PatientProfileReducer from '../../../src/redux/reducers/patient/patientProfileReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

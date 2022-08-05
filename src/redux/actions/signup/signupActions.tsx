@@ -1,25 +1,5 @@
-import Types from '../adherence/allTypes';
-import { logger } from 'react-native-logs';
-interface Iparams {
-  userinfo: any;
-  token: string;
-}
-const defaultConfig = {
-  levels: {
-    debug: 0,
-    info: 1,
-    warn: 2,
-    error: 3,
-  },
-  transportOptions: {
-    colors: {
-      info: 'blueBright',
-      warn: 'yellowBright',
-      error: 'redBright',
-    },
-  },
-};
-let log = logger.createLogger(defaultConfig);
+import Types from '../allTypes';
+import Logger from '../../../logger';
 
 function sendSignupRequest(params: Iparams) {
   return {
@@ -28,14 +8,14 @@ function sendSignupRequest(params: Iparams) {
   };
 }
 function SignupSuccess(data) {
-  log.info(data, 'success');
+  Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_SIGNUP,
     payload: data,
   };
 }
 function SignupFailure(error) {
-  log.error(error, 'login failed');
+  Logger.loggerError('error');
   return {
     type: Types.FAILED_SIGNUP,
     payload: error,

@@ -1,5 +1,5 @@
 import {loginActions} from '../../../src/redux/actions/login/loginActions';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 describe('test loginActions', () => {
   interface Iparams {
     userinfo: any;

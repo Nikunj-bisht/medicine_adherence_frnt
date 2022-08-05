@@ -17,4 +17,13 @@ export const patient = {
     const response = await axios.put(`${API_URLS.NOTIFY_PATIENT}?medname=${payload}`);
     return response.data;
   },
-}
+    reqDelete: async function fetchpatientreqdelete(payload) {
+      const response = await axios.get(`${API_URLS.REQ_DELETE}`);
+      return response.data;
+    },
+    reqAccept: async function fetchpatientreqaccept(payload) {
+      const response = await axios.get(`${API_URLS.REQ_ACCEPT}`);
+      return response.data;
+    },
+  }
+export default patient;

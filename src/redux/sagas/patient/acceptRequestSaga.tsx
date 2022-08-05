@@ -1,10 +1,10 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
 import { acceptRequestActions } from '../../actions/patient/acceptRequestActions';
-import { acceptRequest } from '../../apis/acceptRequest';
+import  patient from '../../apis/patient';
 export function* reqAcceptSaga(value) {
   const {payload} = value;
   try {
-    const response = yield call(acceptRequest.reqAccept, payload);
+    const response = yield call(patient.reqAccept, payload);
     yield put(acceptRequestActions.fetchAcceptRequestSuccess(response?.data));
   } catch (err) {
     yield put(acceptRequestActions.fetchAcceptRequestError(err));

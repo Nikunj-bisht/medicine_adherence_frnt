@@ -1,5 +1,5 @@
 import {deletePatientActions} from '../../../src/redux/actions/patient/deletePatientRequestActions';
-import Types from "../../../src/redux/actions/adherence/allTypes";
+import Types from "../../../src/redux/actions/allTypes";
 describe("test deletePatientActions",()=>{
     const data = "1"
     const err = "SomeError"

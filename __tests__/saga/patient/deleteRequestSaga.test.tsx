@@ -1,6 +1,6 @@
 import { takeLatest } from "@redux-saga/core/effects"
 import { runSaga } from "redux-saga";
-import { deleteRequest } from "../../../src/redux/apis/deleteRequest";
+import  patient from "../../../src/redux/apis/patient";
 import { deletePatientActions } from "../../../src/redux/actions/patient/deletePatientRequestActions";
 import { reqDeletewatcherSaga, reqDeleteSaga } from "../../../src/redux/sagas/patient/deleteRequestSaga";
 
@@ -21,7 +21,7 @@ describe("testing loginSaga", () => {
     data: "1"
   }
   it("should dispatch success action", async () => {
-    const generator = jest.spyOn(deleteRequest, "reqDelete").mockImplementation(() => Promise.resolve(response));
+    const generator = jest.spyOn(patient, "reqDelete").mockImplementation(() => Promise.resolve(response));
     const dispatched = []
     const result = await runSaga(
       {
@@ -38,7 +38,7 @@ describe("testing loginSaga", () => {
     generator.mockClear();
   })
   it("should dispatch error action", async () => {
-    const generator = jest.spyOn(deleteRequest, "reqDelete").mockImplementation(() => Promise.reject());
+    const generator = jest.spyOn(patient, "reqDelete").mockImplementation(() => Promise.reject());
     const dispatched = []
     const result = await runSaga(
       {

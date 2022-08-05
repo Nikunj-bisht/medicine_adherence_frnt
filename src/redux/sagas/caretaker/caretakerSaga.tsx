@@ -1,5 +1,5 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
-import  {careTaker} from '../../apis/getCaretaker'
+import  {careTaker} from '../../apis/careTaker'
 import { caretakerActions } from '../../actions/caretaker/caretakerActions';
 export function* caretakerSaga(value) {
   const {payload} = value;

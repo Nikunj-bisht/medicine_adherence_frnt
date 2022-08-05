@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React,{useState} from 'react';
 import {Text, View} from 'react-native';
 import {
   faContactBook,
@@ -18,13 +18,13 @@ import {useFocusEffect} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SavedDetails = () => {
-  const [bio, biostate] = React.useState('');
-  const [contact, contactstate] = React.useState('');
-  const [age, agestate] = React.useState('');
-  const [weight, weightstate] = React.useState('');
-  const [gender, genderstate] = React.useState('');
-  const [ms, msstate] = React.useState('');
-  const [blood, bloodstate] = React.useState('');
+  const [bio, biostate] = useState('');
+  const [contact, contactstate] = useState('');
+  const [age, agestate] = useState('');
+  const [weight, weightstate] = useState('');
+  const [gender, genderstate] = useState('');
+  const [ms, msstate] = useState('');
+  const [blood, bloodstate] = useState('');
 
   useFocusEffect(() => {
     async function getuserdetail() {

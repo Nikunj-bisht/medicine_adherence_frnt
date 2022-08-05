@@ -15,6 +15,7 @@ import styles from '../CaretakerStyles/caretakerComStyles';
 
 export default function Caretakercomp({navigation}) {
   const [index, setIndex] = React.useState(0);
+  /* istanbul ignore next */
   useFocusEffect(() => {
     async function checkforlog() {
       const checkforlogin = await AsyncStorage.getItem('user_id');

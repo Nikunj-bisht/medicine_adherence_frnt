@@ -7,7 +7,6 @@ import {useFocusEffect} from '@react-navigation/native';
 import {Button, Text} from 'react-native-elements';
 import * as Progress from 'react-native-progress';
 import Toast from 'react-native-toast-message';
-import Share from 'react-native-share';
 import {LogBox} from 'react-native';
 import Fetchdata from '../../../repositories/database/queryData';
 import globalDb from '../../../repositories/database/globalDb';

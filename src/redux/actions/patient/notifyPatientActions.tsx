@@ -1,4 +1,5 @@
-import Types from "../adherence/allTypes";
+import Types from "../allTypes";
+import Logger from "../../../logger";
 
 function notifyPatients(medname: any) {
   return {
@@ -7,12 +8,14 @@ function notifyPatients(medname: any) {
   };
 }
 function notifyPatientsSuccess(data) {
+  Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_NOTIFY_PATIENT,
     payload: data,
   };
 }
 function notifyPatientsError(error) {
+  Logger.loggerError('error');
   return {
     type: Types.FAILED_NOTIFY_PATIENT,
     payload: error,

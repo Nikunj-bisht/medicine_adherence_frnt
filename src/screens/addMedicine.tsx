@@ -10,10 +10,10 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import * as Animatable from 'react-native-animatable';
 import {faClock, faTrash} from '@fortawesome/free-solid-svg-icons';
-import {useFocusEffect} from '@react-navigation/native';
+import {NavigationContainer, useFocusEffect} from '@react-navigation/native';
 import globalDb from '../repositories/database/globalDb';
 import styles from './screenStyles/addMedicineStyles';
-
+import Logger from '../logger';
 const db = globalDb();
 
 interface Props {
@@ -22,7 +22,6 @@ interface Props {
 let Reducerfun = (state: any, action: any) => {
   return {...state, data: action.payload};
 };
-
 let initialVal = {data: []};
 const Addmedicine = ({navigation}: Props) => {
   const [medicines, characterstate] = useReducer(Reducerfun, initialVal);
@@ -65,8 +64,8 @@ const Addmedicine = ({navigation}: Props) => {
   };
 
   const deleteitem = async (id: number) => {
-    console.log(id);
-    console.log('del');
+    Logger.loggerInfo(id);
+    Logger.loggerInfo('del');
     let med_del: any[] = [];
     db.transaction(function (txn: any) {
       txn.executeSql('DELETE FROM `User_medicines`  where user_id = ' + id);

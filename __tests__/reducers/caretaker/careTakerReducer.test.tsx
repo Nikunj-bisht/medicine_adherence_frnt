@@ -1,5 +1,5 @@
 import careTakerReducer from '../../../src/redux/reducers/caretaker/careTakerReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

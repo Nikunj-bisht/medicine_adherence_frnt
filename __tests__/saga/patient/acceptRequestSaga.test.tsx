@@ -1,6 +1,6 @@
 import { takeLatest } from "@redux-saga/core/effects"
 import { runSaga } from "redux-saga";
-import { acceptRequest} from "../../../src/redux/apis/acceptRequest"; 
+import patient from "../../../src/redux/apis/patient"; 
 import { acceptRequestActions } from "../../../src/redux/actions/patient/acceptRequestActions";
 import { reqAcceptwatcherSaga, reqAcceptSaga } from "../../../src/redux/sagas/patient/acceptRequestSaga";
 
@@ -21,7 +21,7 @@ describe("testing loginSaga", () => {
     data: "1"
   }
   it("should dispatch success action", async () => {
-    const generator = jest.spyOn(acceptRequest, "reqAccept").mockImplementation(() => Promise.resolve(response));
+    const generator = jest.spyOn(patient, "reqAccept").mockImplementation(() => Promise.resolve(response));
     const dispatched = []
     const result = await runSaga(
       {
@@ -38,7 +38,7 @@ describe("testing loginSaga", () => {
     generator.mockClear();
   })
   it("should dispatch error action", async () => {
-    const generator = jest.spyOn(acceptRequest,"reqAccept").mockImplementation(() => Promise.reject());
+    const generator = jest.spyOn( patient,"reqAccept").mockImplementation(() => Promise.reject());
     const dispatched = []
     const result = await runSaga(
       {

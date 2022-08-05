@@ -1,5 +1,5 @@
 import {medImagesActions} from '../../../src/redux/actions/adherence/medImagesActions';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 describe('test medImageActions', () => {
   const data = '1';
   const err = 'SomeError';

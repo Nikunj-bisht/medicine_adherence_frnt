@@ -1,5 +1,5 @@
 import deleteRequestReducer from '../../../src/redux/reducers/patient/deleteRequestReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

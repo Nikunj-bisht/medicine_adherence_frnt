@@ -15,9 +15,11 @@ import * as Progress from 'react-native-progress';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import {Button} from 'react-native-elements';
 import styles from '../patientStyles/patientProfileStyles';
+import { useRoute } from '@react-navigation/native';
 
-const ViewProfile = ({route, navigation}) => {
-  const {user_id} = route.params;
+const ViewProfile = ({ navigation }) => {
+  const route=useRoute();
+  const user_id = route.params;
   const [userdetails, userdetailsstate] = React.useState<any>();
   const [progress, progress_status] = React.useState(true);
   const sendnotificationtouser = async (fcm_token: any, medname: any) => {

@@ -14,6 +14,7 @@ import * as Animatable from 'react-native-animatable';
 import globalDb from '../repositories/database/globalDb';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from "./screenStyles/userMedStyles";
+import { useRoute } from '@react-navigation/native';
 
 async function createdb() {
   let first = await AsyncStorage.getItem('first');
@@ -32,8 +33,9 @@ async function createdb() {
   const db = globalDb();
   return db;
 }
-const UserMed = ({route, navigation}) => {
-  const {id} = route.params;
+const UserMed = ({navigation}) => {
+  const route = useRoute();
+  const id = route.params;
   console.log(id);
   const sheetRef = React.useRef(null);
   const savemedicinetodb = async ({Name, Description}) => {

@@ -12,6 +12,7 @@ import UserAvatar from 'react-native-user-avatar';
 import styles from '../CaretakerStyles/searchCaretakerStyles';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {showToast} from '../../../components/atoms/toast';
+import Logger from '../../../logger';
 
 const Searchcaretaker = ({navigation}) => {
   const [data, datastate] = React.useState([]);
@@ -67,7 +68,7 @@ const Searchcaretaker = ({navigation}) => {
       .then(() => {
         navigation.pop(1);
       })
-      .catch(err => console.log(err));
+      .catch(err => Logger.loggerError(err));
   };
 
   const loginValidationSchema = yup.object().shape({

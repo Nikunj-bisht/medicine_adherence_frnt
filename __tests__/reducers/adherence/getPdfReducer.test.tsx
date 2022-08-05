@@ -1,5 +1,5 @@
 import getPdfReducer from '../../../src/redux/reducers/adherence/getPdfReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

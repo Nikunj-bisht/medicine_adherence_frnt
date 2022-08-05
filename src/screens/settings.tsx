@@ -20,7 +20,7 @@ const Settings: React.FC<Props> = ({navigation}: Props) => {
           hasNavArrow={true}
           title="Notification settings"
           titleStyle={styles.settingItems}
-          onPress={() => Linking.openSettings()}
+        onPress={() => Linking.openSettings()}
         />
 
         <SettingsList.Header
@@ -37,9 +37,10 @@ const Settings: React.FC<Props> = ({navigation}: Props) => {
           hasNavArrow={false}
           title="Share with friends and family"
           titleStyle={styles.settingItems}
-          onPress={async () => {
+          id="onpress"
+          onPress={() => {
             try {
-              await Share.share({
+              Share.share({
                 title: 'Medstick',
                 message:
                   'Hello you are invited to use Medstick ' +

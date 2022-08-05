@@ -1,5 +1,5 @@
 import { signupActions } from '../../../src/redux/actions/signup/signupActions';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 describe('test signupActions', () => {
   interface Iparams {
     userinfo: any;

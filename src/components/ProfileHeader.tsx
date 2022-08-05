@@ -10,7 +10,6 @@ import styles from './componentStyles/componentStyles';
 const ProfileHeader: React.FC = () => {
   const [umg, imgstate] = React.useState('https://i.stack.imgur.com/l60Hf.png');
   const [name, namestate] = React.useState('');
-
   useFocusEffect(() => {
     async function getuser() {
       try {

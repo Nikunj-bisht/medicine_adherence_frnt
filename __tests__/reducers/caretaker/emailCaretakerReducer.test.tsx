@@ -1,5 +1,5 @@
 import emailCaretakerReducer from '../../../src/redux/reducers/caretaker/emailCaretakerReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,

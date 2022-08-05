@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,11 +113,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,19 +126,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,10 +154,10 @@ interface Iparams {
   syncData: any;
 }
 &nbsp;
-const adherence = {
-  syncmedicineHistory: <span class="fstat-no" title="function not covered" >as</span>ync (params: Iparams) =&gt; {
-    const {meds_id, syncData} = <span class="cstat-no" title="statement not covered" >params;</span>
-    let response = <span class="cstat-no" title="statement not covered" >await fetch(`${API_URLS.SYNC_HISTORY}?medId=${meds_id}`, {</span>
+const adherences = {
+  syncmedicineHistory: async (params: Iparams) =&gt; {
+    const {meds_id, syncData} = params;
+    let response = await fetch(`${API_URLS.SYNC_HISTORY}?medId=${meds_id}`, {
       method: 'POST',
       body: JSON.stringify(syncData),
       headers: {
@@ -166,34 +166,34 @@ const adherence = {
     });
 <span class="cstat-no" title="statement not covered" >    return response;</span>
   },
-  medimages: async function <span class="fstat-no" title="function not covered" >fetchmedimages(</span>payload) {
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(`${API_URLS.MED_IMAGES}?medId=${payload}`);</span>
+  medimages: async function fetchmedimages(payload) {
+    const response = await axios.get(`${API_URLS.MED_IMAGES}?medId=${payload}`);
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   },
-  downloadPdf: async function <span class="fstat-no" title="function not covered" >downloadPdf(</span>payload) {
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(`${API_URLS.DOWNLOAD_PDF}?medId=${payload}`);</span>
+  downloadPdf: async function downloadPdf(payload) {
+    const response = await axios.get(`${API_URLS.DOWNLOAD_PDF}?medId=${payload}`);
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   },
-  syncmeds: async function <span class="fstat-no" title="function not covered" >syncMeds(</span>payload) {
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(`${API_URLS.SYNC_MEDS}=${payload}`);</span>
+  syncmeds: async function syncMeds(payload) {
+    const response = await axios.get(`${API_URLS.SYNC_MEDS}=${payload}`);
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   },
-  getmedhistory: async function <span class="fstat-no" title="function not covered" >getMedHistory(</span>payload) {
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(`${API_URLS.GET_MED_HISTORY}?medId=${payload}`);</span>
+  getmedhistory: async function getMedHistory(payload) {
+    const response = await axios.get(`${API_URLS.GET_MED_HISTORY}?medId=${payload}`);
 <span class="cstat-no" title="statement not covered" >    return response.data;</span>
   }
 &nbsp;
 };
 &nbsp;
 &nbsp;
-export default adherence;</pre></td></tr></table></pre>
+export default adherences;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Jul 26 2022 10:39:39 GMT+0530 (India Standard Time)
+                at Fri Aug 05 2022 17:01:16 GMT+0530 (India Standard Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

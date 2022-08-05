@@ -1,5 +1,5 @@
 import {emailCaretakerActions} from '../../../src/redux/actions/caretaker/emailCaretakerActions';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 
 describe('test emailCaretakerActions', () => {
   const data = '1';

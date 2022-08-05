@@ -1,4 +1,4 @@
-import Types from '../../actions/adherence/allTypes';
+import Types from '../../actions/allTypes';
 export const initialState = {
   data: null,
   loading: false,

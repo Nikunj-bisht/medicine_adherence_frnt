@@ -2,7 +2,7 @@ import { takeLatest } from "@redux-saga/core/effects"
 import { runSaga } from "redux-saga";
 import { caretakerActions } from "../../../src/redux/actions/caretaker/caretakerActions";
 import { caretakerwatcherSaga, caretakerSaga } from "../../../src/redux/sagas/caretaker/caretakerSaga";
-import { careTaker } from "../../../src/redux/apis/getCaretaker";
+import { careTaker } from "../../../src/redux/apis/careTaker";
 
 const initialData = {}
 describe("test caretakerwatcherSaga", () => {

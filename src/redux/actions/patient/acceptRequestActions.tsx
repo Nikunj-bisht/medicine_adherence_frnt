@@ -1,4 +1,4 @@
-import Types from '../adherence/allTypes';
+import Types from '../allTypes';
 import Logger from '../../../logger';
 
 export function fetchAcceptRequest(c_id: string) {

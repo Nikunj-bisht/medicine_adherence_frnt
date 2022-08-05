@@ -1,4 +1,6 @@
-import Types from '../adherence/allTypes';
+import Types from '../allTypes';
+import Logger from '../../../logger'
+
 interface Iparams {
   userinfo: any;
   token: string;
@@ -10,13 +12,14 @@ function sendLoginRequest(params) {
   };
 }
 function LoginSuccess(data) {
+  Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_LOGIN,
     payload: data,
   };
 }
 function LoginFailure(error) {
-  console.log(error, 'login failed');
+  Logger.loggerInfo('error');
   return {
     type: Types.FAILED_LOGIN,
     payload: error,

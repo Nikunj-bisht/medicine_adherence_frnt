@@ -13,6 +13,7 @@ import Medicineadherence from './adherence/components/medicineAdherence';
 import Addmedicine from './addMedicine';
 import Profile from './profile/profile';
 import styles from './screenStyles/homeScreenStyles';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,6 +30,7 @@ const HomeScreen = () => {
   }, []);
   return (
     <View style={styles.container}>
+      <NavigationContainer>
       <StatusBar backgroundColor="#3743ab" />
 
       <Tab.Navigator
@@ -103,6 +105,7 @@ const HomeScreen = () => {
           component={Profile}
         />
       </Tab.Navigator>
+      </NavigationContainer>
     </View>
   );
 };

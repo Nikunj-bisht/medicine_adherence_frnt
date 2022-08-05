@@ -1,22 +1,6 @@
-import Types from './allTypes';
-import { logger } from "react-native-logs";
+import Types from '../allTypes';
+import Logger from '../../../logger';
 
-const defaultConfig = {
-  levels: {
-    debug: 0,
-    info: 1,
-    warn: 2,
-    error: 3,
-  },
-  transportOptions: {
-    colors: {
-      info: "blueBright",
-      warn: "yellowBright",
-      error: "redBright",
-    },
-  }
-};
-const log = logger.createLogger(defaultConfig);
 
 export function postSyncData(user_id: string) {
   return {
@@ -25,14 +9,14 @@ export function postSyncData(user_id: string) {
   };
 }
 export function postSyncDatasuccess(data) {
-  log.info(data, 'success');
+ Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_SYNC_DATA,
     payload: data,
   };
 }
 export function postSyncDataerror(error) {
-  log.error(error, 'ac');
+  Logger.loggerError('error');
   return {
     type: Types.FAILED_SYNC_DATA,
     payload: error,

@@ -1,24 +1,5 @@
-import {logger} from 'react-native-logs';
-import Types from '../adherence/allTypes';
-
-const defaultConfig = {
-  levels: {
-    debug: 0,
-    info: 1,
-    warn: 2,
-    error: 3,
-  },
-  transportOptions: {
-    colors: {
-      debug: 'greenBright',
-      info: 'blueBright',
-      warn: 'yellowBright',
-      error: 'redBright',
-    },
-  },
-};
-
-var log = logger.createLogger(defaultConfig);
+import Logger from '../../../logger';
+import Types from '../allTypes';
 
 function fetchMedImages(user_id: string) {
   return {
@@ -27,14 +8,14 @@ function fetchMedImages(user_id: string) {
   };
 }
 function fetchMedImagesSuccess(data) {
-  log.info(data, 'success');
+  Logger.loggerInfo('success');
   return {
     type: Types.SUCCESS_MED_IMAGES,
     payload: data,
   };
 }
 function fetchMedImagesError(error) {
-  log.error(error, 'ac');
+ Logger.loggerError('error');
   return {
     type: Types.FAILED_MED_IMAGES,
     payload: error,

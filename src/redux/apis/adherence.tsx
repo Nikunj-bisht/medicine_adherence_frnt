@@ -7,7 +7,7 @@ interface Iparams {
   syncData: any;
 }
 
-const adherence = {
+const adherences = {
   syncmedicineHistory: async (params: Iparams) => {
     const {meds_id, syncData} = params;
     let response = await fetch(`${API_URLS.SYNC_HISTORY}?medId=${meds_id}`, {
@@ -39,4 +39,4 @@ const adherence = {
 };
 
 
-export default adherence;
+export default adherences;

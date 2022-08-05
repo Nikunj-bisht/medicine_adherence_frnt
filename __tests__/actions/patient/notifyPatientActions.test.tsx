@@ -1,5 +1,5 @@
 import {notifyPatientActions} from '../../../src/redux/actions/patient/notifyPatientActions';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 
 describe('test notifyPatientActions', () => {
   const data = '1';

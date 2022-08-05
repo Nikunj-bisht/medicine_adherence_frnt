@@ -1,16 +1,15 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
-import { patient } from '../../apis/patientProfile';
-import { patientProfileActions } from '../../actions/patientProfileActions';
-export function* patientProfileSaga(value) {
+import { ProfileActions } from '../../actions/profile/profileActions';
+import { profile } from '../../apis/profile';
+export function* profileSaga(value) {
   const {payload} = value;
   try {
-    const response = yield call(patient.patientProfile, payload);
-    yield put(patientProfileActions.fetchpatientProfilesuccess(response?.data));
+    const response = yield call(profile.saveProfile, payload);
+    yield put(ProfileActions.saveProfileSuccess(response?.data));
   } catch (err) {
-    yield put( patientProfileActions.fetchpatientProfilerror(err));
+    yield put(ProfileActions.saveProfileFailed(err));
   }
 }
-export function* patientProfilewatcherSaga() {
-  yield takeLatest( patientProfileActions.fetchpatientProfile, patientProfileSaga);
+export function*profilewatcherSaga() {
+  yield takeLatest(ProfileActions.saveProfile, profileSaga);
 }
-

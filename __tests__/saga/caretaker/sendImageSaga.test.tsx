@@ -2,7 +2,7 @@ import { takeLatest } from "@redux-saga/core/effects"
 import { runSaga } from "redux-saga";
 import { sendImagesAction }  from "../../../src/redux/actions/caretaker/sendImagesAction";
 import { sendImagewatcherSaga, sendImageSaga } from "../../../src/redux/sagas/caretaker/sendImageSaga";
-import { careTaker } from "../../../src/redux/apis/sendImages";
+import { careTaker } from "../../../src/redux/apis/careTaker";
 
 const initialData = {}
 describe("test sendImagewatcherSaga", () => {

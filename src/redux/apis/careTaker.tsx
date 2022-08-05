@@ -17,4 +17,12 @@ export const careTaker = {
     );
     return response.data;
   },
+  caretaker: async function fetchcaretaker(payload) {
+    const response = await axios.get(
+      `${API_URLS.CARETAKER}?patientId=${payload}`,
+    );
+    return response.data;
+  },
 };
+
+export default careTaker;

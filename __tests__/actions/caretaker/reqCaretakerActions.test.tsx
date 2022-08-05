@@ -1,5 +1,5 @@
 import {reqCaretakerActions} from '../../../src/redux/actions/caretaker/reqCaretakerActions';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 describe('test reqCaretakerActions', () => {
   const data = '1';
   const err = 'SomeError';

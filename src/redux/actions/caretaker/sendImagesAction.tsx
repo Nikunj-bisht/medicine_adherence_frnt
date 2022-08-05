@@ -1,4 +1,5 @@
-import Types from '../adherence/allTypes';
+import Types from '../allTypes';
+import Logger from '../../../logger';
 export function sendImageRequest(medId: number) {
   return {
     type: Types.SEND_IMAGES,
@@ -7,14 +8,14 @@ export function sendImageRequest(medId: number) {
 }
 
 export function sendImageSuccess(number) {
-
+Logger.loggerInfo('success');
     return{
         type: Types.SUCCES_SEND_IMAGES,
         payload: number,
     };
 }
 export function sendImageFailure(error) {
-    console.log(error, 'ac');
+    Logger.loggerError('error');
     return {
       type: Types.FAILED_GET_IMAGES,
       payload: error,

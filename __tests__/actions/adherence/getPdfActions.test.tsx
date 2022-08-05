@@ -1,5 +1,5 @@
 import { getPdfActions } from '../../../src/redux/actions/adherence/getPdfActions'
-import Types from "../../../src/redux/actions/adherence/allTypes";
+import Types from "../../../src/redux/actions/allTypes";
 describe("test CaretakerActions",()=>{
     const data = "1"
     const err = "SomeError"

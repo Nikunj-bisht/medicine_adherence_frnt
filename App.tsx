@@ -1,6 +1,6 @@
 import React from 'react';
 import analytics from '@react-native-firebase/analytics';
-
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 import Stackscreen from './src/stackscreens/stackScreen';
 import {Provider} from 'react-redux';
@@ -12,6 +12,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
+      <SafeAreaProvider>
       <NavigationContainer
         ref={navigationRef}
         onReady={() => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
         }}>
         <Stackscreen />
       </NavigationContainer>
+      </SafeAreaProvider>
     </Provider>
   );
 };

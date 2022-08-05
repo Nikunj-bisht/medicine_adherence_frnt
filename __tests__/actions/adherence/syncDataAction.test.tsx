@@ -1,5 +1,5 @@
 import {syncDataActions } from '../../../src/redux/actions/adherence/syncDataActions';
-import Types from "../../../src/redux/actions/adherence/allTypes";
+import Types from "../../../src/redux/actions/allTypes";
 describe("test postSaveUserActions",()=>{
     const data = "1"
     const err = "SomeError"

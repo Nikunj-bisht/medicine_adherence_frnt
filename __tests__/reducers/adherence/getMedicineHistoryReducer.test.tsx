@@ -1,5 +1,5 @@
 import getMediceneHistoryReducer from '../../../src/redux/reducers/adherence/getMediceneHistoryReducer';
-import Types from '../../../src/redux/actions/adherence/allTypes';
+import Types from '../../../src/redux/actions/allTypes';
 const initialState = {
   data: null,
   loading: false,
