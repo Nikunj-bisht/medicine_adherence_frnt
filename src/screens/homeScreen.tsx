@@ -15,7 +15,6 @@ import Profile from './profile/profile';
 import styles from './screenStyles/homeScreenStyles';
 import { NavigationContainer } from '@react-navigation/native';
 
-
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -39,7 +38,6 @@ const HomeScreen = () => {
           tabBarInactiveTintColor: '#555',
           tabBarInactiveBackgroundColor: 'white',
           tabBarActiveBackgroundColor: '#e3f2fd',
-
           headerRight: () => (
             <FontAwesomeIcon
               color="black"

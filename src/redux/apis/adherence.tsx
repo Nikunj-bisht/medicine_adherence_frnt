@@ -9,6 +9,7 @@ interface Iparams {
 
 const adherences = {
   syncmedicineHistory: async (params: Iparams) => {
+
     const {meds_id, syncData} = params;
     let response = await fetch(`${API_URLS.SYNC_HISTORY}?medId=${meds_id}`, {
       method: 'POST',
@@ -20,7 +21,9 @@ const adherences = {
     return response;
   },
   medimages: async function fetchmedimages(payload) {
+    console.log("aagaya")
     const response = await axios.get(`${API_URLS.MED_IMAGES}?medId=${payload}`);
+    console.log(response);
     return response.data;
   },
   downloadPdf: async function downloadPdf(payload) {

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Click send image renders correctly 1`] = `
+<Text
+  allowFontScaling={false}
+  selectable={false}
+  style={
+    Array [
+      Object {
+        "color": "white",
+        "fontSize": 12,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Material Design Icons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  󰍂
+</Text>
+`;

@@ -375,9 +375,6 @@ const Reminder = ({route, navigation}) => {
             mode="outlined"
             value={title}
             onChangeText={titlechange}></TextInput>
-          {/* <InteractiveTextInput mainColor="black" placeholder="Title"
-                    style={{ borderColor: 'black', position: 'absolute', justifyContent: 'center' }}
-                    onChangeText={titlechange}></InteractiveTextInput> */}
           <Divider></Divider>
           <View>
             <TouchableOpacity

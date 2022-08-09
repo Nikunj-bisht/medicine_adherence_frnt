@@ -45,22 +45,3 @@ const Downloadpdf = async (globalmedId: any) => {
 };
 
 export default Downloadpdf;
-
-  //from here
-  // const pdf = useSelector(
-  //   state => state.getPdfReducer.pdfList,
-  //   );
-  //   const{load} = useSelector(state => state.getPdFReducer);
-  //   console.log(load,'load');
-  //   const [refresh,refeereshstate] = React.useState(false);
-  //   const [open, setOpen] = React.useState(false);
-  //   const dispatch = useDispatch();
-  //   const getPdfRequest = async () => {
-  //     let user_id = await AsyncStorage.getItem('user_id');
-  //     dispatch(getPdfRequest(user_id));
-  //     refeereshstate(false);
-  //   };
-  //   useEffect(() => {
-  //     getPdfRequest();
-  //   }, []);
-  //till here

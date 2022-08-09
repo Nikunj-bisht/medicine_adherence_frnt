@@ -1,7 +1,7 @@
 import adherences from "../../src/redux/apis/adherence"
 
 describe("test fetchimage",()=>{
-    it("test images",()=>{
+    it.only("test images",()=>{
         const payload="payload"
         expect(adherences.medimages(payload)).toEqual({"_U": 0, "_V": 0, "_W": null, "_X": null})
     })

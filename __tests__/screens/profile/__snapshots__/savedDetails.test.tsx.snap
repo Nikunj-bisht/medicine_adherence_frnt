@@ -657,3 +657,661 @@ exports[`Saved Details renders correctly 1`] = `
   </View>
 </View>
 `;
+
+exports[`Saved Details renders correctly 2`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "marginLeft": 8,
+      "marginTop": 10,
+      "width": "95%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={448}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={512}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M384 0H96C60.65 0 32 28.65 32 64v384c0 35.35 28.65 64 64 64h288c35.35 0 64-28.65 64-64V64C448 28.65 419.3 0 384 0zM240 128c35.35 0 64 28.65 64 64s-28.65 64-64 64c-35.34 0-64-28.65-64-64S204.7 128 240 128zM336 384h-192C135.2 384 128 376.8 128 368C128 323.8 163.8 288 208 288h64c44.18 0 80 35.82 80 80C352 376.8 344.8 384 336 384zM496 64H480v96h16C504.8 160 512 152.8 512 144v-64C512 71.16 504.8 64 496 64zM496 192H480v96h16C504.8 288 512 280.8 512 272v-64C512 199.2 504.8 192 496 192zM496 320H480v96h16c8.836 0 16-7.164 16-16v-64C512 327.2 504.8 320 496 320z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={512}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M320 192c0 17.69 14.31 31.1 32 31.1L416 224c17.69 0 32-14.31 32-32s-14.31-32-32-32V63.98c0-11.19-5.844-21.53-15.38-27.34c-9.531-5.781-21.41-6.188-31.34-1.062l-32 16.59c-15.69 8.125-21.81 27.44-13.69 43.13C329.3 106.3 340.4 112.6 352 112.6V160C334.3 160 320 174.3 320 192zM392 255.6c-48.6 0-88 39.4-88 88c0 36.44 22.15 67.7 53.71 81.07l-7.682 8.004c-10.72 11.16-10.34 28.88 .8125 39.56C356.3 477.4 363.3 480 370.2 480c7.344 0 14.72-2.875 20.19-8.625c69.61-72.53 89.6-85.39 89.6-127.8C480 294.1 440.6 255.6 392 255.6zM392 367.6c-13.23 0-24-10.77-24-24s10.77-24 24-24s24 10.77 24 24S405.2 367.6 392 367.6zM39.99 191.7c8.672 0 17.3-3.5 23.61-10.38L96 145.9v302c0 17.7 14.33 32.03 31.1 32.03s32-14.33 32-32.03V145.9L192.4 181.3C204.4 194.3 224.6 195.2 237.6 183.3c13.03-11.95 13.9-32.22 1.969-45.27L151.6 41.94c-12.12-13.26-35.06-13.26-47.19 0l-87.1 96.09C4.475 151.1 5.35 171.3 18.38 183.3C24.52 188.9 32.27 191.7 39.99 191.7z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+         yrs
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={512}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M310.3 97.25c-8-3.5-17.5 .25-21 8.5L255.8 184C233.8 184.3 216 202 216 224c0 22.12 17.88 40 40 40S296 246.1 296 224c0-10.5-4.25-20-11-27.12l33.75-78.63C322.3 110.1 318.4 100.8 310.3 97.25zM448 64h-56.23C359.5 24.91 310.7 0 256 0S152.5 24.91 120.2 64H64C28.75 64 0 92.75 0 128v320c0 35.25 28.75 64 64 64h384c35.25 0 64-28.75 64-64V128C512 92.75 483.3 64 448 64zM256 304c-70.58 0-128-57.42-128-128s57.42-128 128-128c70.58 0 128 57.42 128 128S326.6 304 256 304z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+         kg
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={512}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M480 .0002l-112.4 .0001c-21.38 0-32.09 25.85-16.97 40.97l29.56 29.56l-27.11 27.11C326.1 76.85 292.7 64 256 64c-88.37 0-160 71.63-160 160c0 77.4 54.97 141.9 128 156.8v19.22H192c-8.836 0-16 7.162-16 16v31.1c0 8.836 7.164 16 16 16l32 .0001v32c0 8.836 7.164 16 16 16h32c8.838 0 16-7.164 16-16v-32l32-.0001c8.838 0 16-7.164 16-16v-31.1c0-8.838-7.162-16-16-16h-32v-19.22c73.03-14.83 128-79.37 128-156.8c0-28.38-8.018-54.65-20.98-77.77l30.45-30.45l29.56 29.56C470.1 160.5 496 149.8 496 128.4V16C496 7.164 488.8 .0002 480 .0002zM256 304c-44.11 0-80-35.89-80-80c0-44.11 35.89-80 80-80c44.11 0 80 35.89 80 80C336 268.1 300.1 304 256 304z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={512}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M256 64C109.1 64 0 125.9 0 208v98.13C0 384.5 114.6 448 256 448s256-63.5 256-141.9V208C512 125.9 401.1 64 256 64zM256 288C203.1 288 155.1 279.1 120.4 264.6C155 249.9 201.6 240 256 240s101 9.875 135.6 24.62C356.9 279.1 308.9 288 256 288zM437.1 234.4C392.1 208.3 328.3 192 256 192S119.9 208.3 74.88 234.4C68 226.1 64 217.3 64 208C64 163.9 149.1 128 256 128c105.1 0 192 35.88 192 80C448 217.3 444 226.1 437.1 234.4z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgrey",
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "marginLeft": 0,
+        "padding": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight={18}
+        bbWidth={18}
+        fill="#3743ab"
+        focusable={false}
+        height={18}
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        secondaryFill={null}
+        secondaryOpacity={0.4}
+        size={18}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {},
+            Object {
+              "flex": 0,
+              "height": 18,
+              "width": 18,
+            },
+          ]
+        }
+        vbHeight={512}
+        vbWidth={384}
+        width={18}
+      >
+        <RNSVGGroup
+          fill={4281811883}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M16 319.1C16 245.9 118.3 89.43 166.9 19.3C179.2 1.585 204.8 1.585 217.1 19.3C265.7 89.43 368 245.9 368 319.1C368 417.2 289.2 496 192 496C94.8 496 16 417.2 16 319.1zM112 319.1C112 311.2 104.8 303.1 96 303.1C87.16 303.1 80 311.2 80 319.1C80 381.9 130.1 432 192 432C200.8 432 208 424.8 208 416C208 407.2 200.8 400 192 400C147.8 400 112 364.2 112 319.1z"
+            fill={4281811883}
+            fillOpacity={1}
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 18,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "grey",
+            "fontSize": 17,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;

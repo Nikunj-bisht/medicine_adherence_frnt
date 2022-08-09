@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
   scrollView: {height: '100%', backgroundColor: 'white'},
   top: {height: '100%', backgroundColor: 'white'},
   container1: {height: '100%', padding: 7, marginBottom: 15},
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
     marginTop: 35,
   },
 });
-export default styles;
+export default Styles;

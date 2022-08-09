@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add events renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`Home Screen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;

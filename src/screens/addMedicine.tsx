@@ -107,8 +107,8 @@ const Addmedicine = ({navigation}: Props) => {
                   </View>
                 </View>
               </ListItem.Content>
-
               <TouchableOpacity
+                
                 style={styles.rem}
                 onPress={() =>
                   navigation.navigate('Add Reminder', {id: item.user_id})
@@ -120,6 +120,7 @@ const Addmedicine = ({navigation}: Props) => {
                 />
               </TouchableOpacity>
               <TouchableOpacity
+
                 onPress={() => {
                   Alert.alert('Delete it!', 'Sure you want delete it', [
                     {

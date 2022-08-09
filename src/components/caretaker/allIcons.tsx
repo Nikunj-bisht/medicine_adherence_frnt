@@ -1,39 +1,33 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react-native/no-inline-styles */
-import {
-  faUserNurse,
-  faUserFriends,
-  faRightToBracket,
-  faSignOut,
-} from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+
+import Icon from 'react-native-vector-icons/FontAwesome5'
+import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 function Caretaker_nurse() {
   return (
-    <FontAwesomeIcon
+    <Icon
       style={{marginBottom: 6}}
       color="#3743ab"
-      icon={faUserNurse}></FontAwesomeIcon>
+      name='user-nurse'></Icon>
   );
 }
 
 function Signout() {
-  return <FontAwesomeIcon color="white" icon={faSignOut}></FontAwesomeIcon>;
+  return <MatIcon color="white" name='logout'></MatIcon>;
 }
 
 function Righttoobracket() {
   return (
-    <FontAwesomeIcon color="white" icon={faRightToBracket}></FontAwesomeIcon>
+    <MatIcon color="white" name='login' ></MatIcon>
   );
 }
 
 function Userfriend() {
   return (
-    <FontAwesomeIcon
+    <Icon
       style={{marginBottom: 6}}
       color="#3743ab"
-      icon={faUserFriends}></FontAwesomeIcon>
+     name='users'></Icon>
   );
 }
 
